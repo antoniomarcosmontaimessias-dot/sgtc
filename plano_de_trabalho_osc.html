@@ -144,15 +144,6 @@
     position:relative;
   }
   .item-card + .item-card{ margin-top:1rem; }
-  .item-card-actions{ display:flex; align-items:center; gap:.5rem; flex-wrap:wrap; }
-  .csv-msg{ margin-top:.75rem; font-size:.85rem; }
-  .csv-msg[data-state="ok"]{ color:#1f6b3a; } .csv-msg[data-state="warn"]{ color:#8a5a00; } .csv-msg[data-state="erro"]{ color:#a12727; }
-  .csv-msg ul{ margin:.4rem 0 0 1.1rem; list-style:disc; }
-  .csv-steps{ margin:.5rem 0 .9rem 1.2rem; list-style:decimal; font-size:.85rem; line-height:1.5; max-width:78ch; }
-  .csv-cols{ width:100%; border-collapse:collapse; font-size:.8rem; margin-top:.5rem; }
-  .csv-cols th, .csv-cols td{ border:1px solid var(--line); padding:.25rem .5rem; text-align:left; vertical-align:top; }
-  .csv-cols code{ font-family:'Space Mono',monospace; font-size:.75rem; }
-  .csv-vals{ font-size:.8rem; line-height:1.5; margin-top:.4rem; }
   .item-card-head{
     display:flex; align-items:center; justify-content:space-between; gap:.75rem;
     margin-bottom:.9rem; padding-bottom:.7rem; border-bottom:1px dashed var(--line);
@@ -202,7 +193,7 @@
   .vt-wrap{ overflow-x:auto; border:1px solid var(--line); border-radius:8px; -webkit-overflow-scrolling:touch; background:#fff; }
   table.vt{ border-collapse:separate; border-spacing:0; width:100%; table-layout:fixed; font-size:.8rem; }
   table.vt.vt-simple{ min-width:114rem; }
-  table.vt.vt-rh{ min-width:128rem; }
+  table.vt.vt-rh{ min-width:114rem; }
   table.vt th, table.vt td{ padding:.4rem .35rem; vertical-align:top; border-bottom:1px solid var(--line); }
   table.vt thead th{ background:var(--ink); color:#fff; font-weight:600; font-size:.7rem; text-align:left; line-height:1.25; }
   table.vt thead th.num, table.vt td.num{ text-align:right; }
@@ -211,10 +202,7 @@
   table.vt .input-money{ font-size:.76rem; padding:.4rem .3rem; }
   table.vt textarea.input{ min-height:2.4rem; max-height:12rem; }
   table.vt col.c-grupo{ width:9rem; } table.vt col.c-cat{ width:13rem; } table.vt col.c-item{ width:12rem; }
-  table.vt col.c-desc{ width:10rem; } table.vt col.c-func{ width:13rem; } table.vt col.c-rub{ width:14rem; } table.vt col.c-act{ width:11.5rem; }
-  .rh-act{ display:grid; grid-template-columns:1fr 1fr; gap:.3rem; }
-  .rh-act .btn{ white-space:normal; line-height:1.15; padding:.3rem .4rem; font-size:.72rem; }
-  table.vt td.act{ vertical-align:top; }
+  table.vt col.c-desc{ width:10rem; } table.vt col.c-func{ width:13rem; }
   table.vt col.c-mes{ width:5.2rem; } table.vt col.c-tot{ width:6.5rem; }
   .vt-total{ display:inline-block; font-family:'Space Mono',monospace; font-weight:700; color:var(--brand-dark); font-size:.78rem; padding-top:.5rem; }
   .vt-actions{ display:flex; flex-wrap:wrap; align-items:center; gap:.5rem; margin-top:.75rem; }
@@ -224,49 +212,6 @@
   .vt-msg{ color:var(--brand-dark); font-weight:600; }
   .vt-rubrica{ margin-top:.75rem; display:grid; gap:.3rem; max-width:34rem; }
   .vt-cathint{ margin-top:.5rem; padding:.4rem .6rem; border-left:3px solid var(--gold); background:#FBF6EA; border-radius:0 4px 4px 0; }
-
-  /* ===================== v7.3 — cards de custo compactos (Seções 8, 9 e 10) =====================
-     Sem tabela: listas de campos com rótulo pequeno e borda finíssima; fluido na tela e no PDF. */
-  .sec-intro{ margin-top:.5rem; width:100%; max-width:none; font-size:.82rem; color:var(--ink-soft); }
-  .cc .input, .cc select.input, .cc textarea.input{ border:1px solid #D3D8DD; border-radius:4px; padding:.28rem .45rem; font-size:.8rem; line-height:1.35; }
-  .cc textarea.input{ min-height:1.9rem; }
-  .cc .input[readonly], .cc .input.readonly{ background:#F4F5F2; border-style:solid; }
-  .cc .input-money{ font-size:.76rem; padding:.28rem .35rem; }
-  .cc .lbl, .lbl{ display:block; font-size:.7rem; font-weight:600; color:var(--ink-soft); line-height:1.2; }
-  .ifield-row{ display:flex; flex-wrap:wrap; gap:.5rem 1.25rem; align-items:center; }
-  .ifield{ display:flex; align-items:center; gap:.4rem; min-width:0; flex:1 1 14rem; }
-  .ifield.w-sm{ flex:0 1 13rem; }
-  .ifield.w-lg{ flex:2 1 22rem; }
-  .ifield > .lbl{ flex:0 0 auto; font-size:.74rem; }
-  .ifield > .input{ flex:1 1 auto; min-width:0; width:auto; }
-  .ifield.ta{ align-items:flex-start; }
-  .lanc-tit{ font-weight:600; font-size:.8rem; color:var(--ink); margin:.9rem 0 .15rem; }
-  .lanc-row{ padding:.55rem 0 .5rem; border-top:1px dotted #C4CAD0; }
-  .lanc-list > .lanc-row:first-child{ border-top:1px solid #C4CAD0; }
-  .lanc-top{ display:grid; grid-template-columns:minmax(6.5rem,.8fr) minmax(10rem,1.3fr) minmax(8rem,1fr) minmax(9rem,1.2fr) 10.5rem; gap:.35rem .6rem; align-items:start; }
-  .lanc-row.rh .lanc-top{ grid-template-columns:minmax(6.5rem,.8fr) minmax(10rem,1.3fr) minmax(8rem,1fr) minmax(11rem,1.3fr) 10.5rem; }
-  .lf{ min-width:0; display:flex; flex-direction:column; gap:.15rem; }
-  .lanc-meses{ display:grid; grid-template-columns:repeat(auto-fill,minmax(5.6rem,1fr)); gap:.35rem .4rem; margin-top:.4rem; }
-  .lanc-meses .input-money{ text-align:right; }
-  .lf-tot{ grid-column:1 / -1; flex-direction:row; align-items:baseline; gap:.5rem; }
-  .lf-tot .vt-total{ padding-top:0; }
-  .lanc-msg:empty, .vt-cathint[hidden]{ display:none; }
-  .lanc-msg{ margin:.3rem 0 0; }
-  .lanc-row .vt-cathint{ margin-top:.35rem; }
-  .vlist{ column-width:22rem; column-gap:2.5rem; margin-top:.2rem; }
-  .vl{ display:grid; grid-template-columns:minmax(0,1fr) 8.5rem; align-items:center; gap:.5rem; padding:.14rem 0; break-inside:avoid; font-size:.8rem; }
-  .vl .vl-l{ display:flex; align-items:center; gap:.35rem; flex-wrap:nowrap; min-width:0; }
-  .vl .vl-l label{ flex:0 1 auto; }
-  .vl.has-esp .vl-l label{ flex:0 0 auto; }
-  .vl .sg{ display:inline-block; min-width:1.8rem; font-family:'Space Mono',monospace; font-weight:700; font-size:.74rem; color:var(--ink-soft); }
-  .vl .esp-in{ flex:1 1 5rem; min-width:4rem; }
-  .vl.eq{ font-weight:700; border-top:1px solid #C4CAD0; margin-top:.25rem; padding-top:.3rem; }
-  .vl.eq .input{ font-weight:700; }
-  .vl-sub{ display:flex; align-items:center; justify-content:space-between; gap:.5rem; flex-wrap:wrap; font-weight:700; font-size:.82rem; color:var(--brand-dark); margin:1rem 0 .1rem; padding-bottom:.2rem; border-bottom:1px solid var(--line); }
-  @media (max-width:980px){
-    .lanc-top, .lanc-row.rh .lanc-top{ grid-template-columns:repeat(2,minmax(0,1fr)); }
-    .lanc-top .lf-act{ grid-column:1 / -1; }
-  }
   .outra-wrap{ margin-top:.5rem; }
   .outra-wrap.hidden{ display:none; }
 
@@ -285,7 +230,7 @@
     table.vt thead, table.vt colgroup{ display:none; }
     table.vt tr{ display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:.5rem; }
     table.vt td{ border:none; padding:0; text-align:left !important; }
-    table.vt td.txt, table.vt td.tot, table.vt td.act{ grid-column:1 / -1; }
+    table.vt td.txt, table.vt td.tot{ grid-column:1 / -1; }
     table.vt td::before{ content:attr(data-label); display:block; font-size:.68rem; font-weight:600; color:var(--ink-soft); margin-bottom:.15rem; }
     .vt-total{ padding-top:0; }
   }
@@ -478,7 +423,7 @@
     table.vt.vt-simple col.c-grupo{ width:7%; } table.vt.vt-simple col.c-cat{ width:11%; } table.vt.vt-simple col.c-desc{ width:8.6%; }
     table.vt.vt-simple col.c-item{ width:10%; } table.vt.vt-simple col.c-mes{ width:4.7%; } table.vt.vt-simple col.c-tot{ width:7%; }
     table.vt.vt-rh col.c-grupo{ width:7%; } table.vt.vt-rh col.c-cat{ width:11%; } table.vt.vt-rh col.c-desc{ width:8.6%; }
-    table.vt.vt-rh col.c-func, table.vt.vt-rh col.c-rub{ width:10%; } table.vt.vt-rh col.c-mes{ width:4.7%; } table.vt.vt-rh col.c-tot{ width:7%; }
+    table.vt.vt-rh col.c-func{ width:10%; } table.vt.vt-rh col.c-mes{ width:4.7%; } table.vt.vt-rh col.c-tot{ width:7%; }
     /* Valores dos meses: sem moldura nem recuo no espelho (a célula já delimita a coluna), fonte menor e
        alinhados à direita — assim "123.456,78" cabe sem quebrar no meio do número. */
     table.vt td.mes{ border-left:.5px solid #e3e6e1; }
@@ -486,7 +431,6 @@
     .vt-total{ padding-top:1px; font-size:5.2pt; white-space:nowrap; }
     .vt-title{ break-after:avoid; page-break-after:avoid; }
     .vt-actions, .vt-rubrica, .vt-cathint, .vt-status, .vt-msg{ display:none !important; }
-    table.vt .act, table.vt col.c-act{ display:none !important; }
     @media (orientation:portrait){
       table.vt, table.vt.vt-simple, table.vt.vt-rh{ font-size:4.6pt; }
       table.vt thead th{ font-size:4.3pt; }
@@ -494,32 +438,6 @@
       table.vt td.mes .print-mirror{ font-size:4.2pt; }
       .vt-total{ font-size:4.4pt; }
     }
-
-
-    /* v7.3 — cards compactos no PDF: linhas de campos com borda finíssima, sem tabela */
-    .instr.keep-print.sec-intro{ display:block !important; font-size:8.5pt; margin:1.5mm 0 3mm; }
-    .cc .lbl{ font-size:6pt; }
-    .cc .print-mirror{ font-size:7pt; padding:1px 3px; min-height:1.4em; line-height:1.3; border:.5px solid #cfd4cf; border-radius:2px; }
-    .ifield-row{ gap:1.2mm 5mm; }
-    .ifield{ flex:1 1 38mm; } .ifield.w-sm{ flex:0 0 40mm; } .ifield.w-lg{ flex:2 1 80mm; }
-    .ifield .print-mirror{ width:auto; flex:1 1 auto; min-width:14mm; white-space:nowrap; }
-    .vl-l .print-mirror{ width:auto; flex:1 1 22mm; min-width:22mm; }
-    .ifield > .lbl{ font-size:6.5pt; }
-    .lanc-row{ break-inside:avoid; page-break-inside:avoid; padding:1.5mm 0; }
-    .lanc-top, .lanc-row.rh .lanc-top{ grid-template-columns:.8fr 1.3fr 1fr 1.3fr !important; gap:1mm 2mm; }
-    .lanc-top .lf-act{ display:none !important; }
-    .lanc-meses{ grid-template-columns:repeat(13,minmax(0,1fr)) !important; gap:1mm; margin-top:1mm; }
-    .lanc-meses .print-mirror{ font-size:5.4pt; padding:1px 1px; text-align:right; }
-    .lanc-meses .lbl{ font-size:5.2pt; }
-    .lanc-meses .vt-total{ font-size:6pt; padding-top:0; white-space:nowrap; }
-    .lanc-meses .lf-tot{ flex-direction:row; gap:2mm; }
-    .vlist{ column-width:62mm; column-gap:6mm; }
-    .vl{ grid-template-columns:minmax(0,1fr) 27mm; font-size:7pt; padding:.4mm 0; }
-    .vl .sg{ font-size:6.5pt; min-width:6mm; }
-    .vl .esp-in{ min-width:20mm; }
-    .vl-sub{ font-size:7.5pt; margin:2.5mm 0 .5mm; }
-    .lanc-tit{ font-size:8pt; break-after:avoid; page-break-after:avoid; }
-    .vl-sub, .lanc-tit{ break-after:avoid; page-break-after:avoid; }
 
     /* Painéis recolhíveis ficam abertos no PDF */
     details:not([open]) > *:not(summary){ display:block !important; }
@@ -730,6 +648,193 @@
 <!-- Preenchida em tempo de execução por setPrintOrientation() conforme a escolha do usuário
      no modal "Orientação da página" (Retrato/Paisagem) antes de cada impressão/PDF. -->
 <style id="print-orientation-style">@media print{ @page{ size: A4 landscape; margin: 0; } }</style>
+<style id="csv-dup-css">
+  .item-card-btns{ display:flex; gap:.5rem; flex-wrap:wrap; justify-content:flex-end; }
+  .card-dup-flash{ animation:dupflash 2.2s ease-out; }
+  @keyframes dupflash{ 0%{ box-shadow:0 0 0 3px #B8860B; background:#FFF8E1; } 100%{ box-shadow:0 0 0 0 transparent; } }
+  .csv-tools{ margin-top:1rem; padding:.85rem 1rem; border:1px dashed var(--line); border-radius:8px; background:#fff; }
+  .csv-tools .csv-help{ margin-top:.6rem; font-size:.85rem; }
+  .csv-tools .csv-help > summary{ cursor:pointer; font-weight:600; }
+  .csv-passos{ margin:.5rem 0 .5rem 1.2rem; list-style:decimal; } .csv-passos li{ margin:.2rem 0; }
+  .csv-cols{ margin:.25rem 0 .5rem 1.2rem; list-style:disc; columns:2; column-gap:2rem; } .csv-cols li{ break-inside:avoid; margin:.15rem 0; }
+  .csv-tools code{ font-family:'Space Mono',monospace; font-size:.78rem; background:#F1F1EC; padding:0 .25rem; border-radius:3px; }
+  .csv-lista{ margin-top:.35rem; } .csv-lista summary{ cursor:pointer; } .csv-lista p{ margin:.3rem 0 .3rem 1rem; line-height:1.5; }
+  .csv-status{ margin-top:.6rem; padding:.5rem .75rem; border-radius:6px; border:1px solid; font-size:.85rem; }
+  .csv-status[hidden]{ display:none; }
+  .csv-status.info{ background:#EEF3F9; border-color:#B0C8E3; color:#12355B; } .csv-status.ok{ background:#ECFDF3; border-color:#86EFAC; color:#14532D; }
+  .csv-status.warn{ background:#FFFBEB; border-color:#FCD34D; color:#78350F; } .csv-status.err{ background:#FEF2F2; border-color:#FCA5A5; color:#7F1D1D; }
+  .csv-avisos{ margin:.35rem 0 0 1.2rem; list-style:disc; }
+  @media (max-width:640px){ .csv-cols{ columns:1; } }
+  @media print{ .csv-tools, .item-card-btns{ display:none !important; } }
+</style>
+<style id="cx-css">
+  /* Seções 8, 9 e 10: textos explicativos justificados e com a largura da tela/página */
+  #sec-implantacao .field-hint, #sec-rh .field-hint, #sec-operacional .field-hint{ max-width:none !important; width:100%; text-align:justify; hyphens:auto; -webkit-hyphens:auto; overflow-wrap:break-word; line-height:1.55; }
+  /* Bordas finíssimas nas tabelas e campos dos cards de custo */
+  table.vt{ border-collapse:collapse; border-spacing:0; }
+  table.vt th, table.vt td{ border:.5px solid #6b7064; }
+  table.vt thead th{ border-color:#3f453c; }
+  table.vt .input, table.cx .input{ border:.5px solid #6b7064; border-radius:0; box-shadow:none; }
+  table.vt .input:focus, table.cx .input:focus{ outline:2px solid var(--gold); outline-offset:0; }
+  .vt-wrap{ border:.5px solid #6b7064; border-radius:0; }
+  table.vt col.c-acao{ width:9.5rem; } table.vt col.c-rub{ width:12rem; }
+  table.vt.vt-simple.vt-multi{ min-width:126rem; } table.vt.vt-rh.vt-multi{ min-width:140rem; }
+  table.vt .vt-cathint{ margin:.3rem 0 0; padding:.2rem .4rem; font-size:.68rem; line-height:1.3; }
+  table.vt .input.readonly{ background:#F0F2EE; }
+  /* Quadros de campos (cabeçalho do card) */
+  table.cx{ width:100%; border-collapse:collapse; table-layout:fixed; background:#fff; margin-bottom:.9rem; }
+  table.cx td{ border:.5px solid #6b7064; padding:.35rem .5rem; vertical-align:top; }
+  .cx-f{ display:flex; align-items:center; gap:.4rem; flex-wrap:wrap; }
+  .cx-f > label{ font-size:.78rem; font-weight:600; color:var(--ink); white-space:normal; }
+  .cx-f > .input, .cx-f > input, .cx-f > select{ flex:1 1 7rem; min-width:0; padding:.3rem .4rem; font-size:.82rem; }
+  .cx-f .total-ro{ flex:1 1 7rem; font-family:'Space Mono',monospace; font-weight:700; color:var(--brand-dark); }
+  .cx-blk h5{ font-size:.85rem; font-weight:700; margin:0 0 .35rem; display:flex; align-items:center; justify-content:space-between; gap:.5rem; flex-wrap:wrap; }
+  .cx-blk h5 .cx-f{ flex:1 1 auto; justify-content:flex-end; }
+  .cx-line{ display:flex; align-items:center; justify-content:space-between; gap:.5rem; padding:.12rem 0 .12rem .9rem; }
+  .cx-line > label{ font-size:.78rem; flex:1 1 auto; line-height:1.25; }
+  .cx-line > .input{ flex:0 0 9rem; max-width:9rem; padding:.28rem .4rem; font-size:.78rem; }
+  .cx-line > .input.cx-esp{ flex:0 1 9rem; text-align:left; font-family:inherit; }
+  .cx-total td{ background:#EAF3F2; }
+  .cx-total .amount{ font-family:'Space Mono',monospace; font-weight:700; color:var(--brand-dark); }
+  .vt-actions{ margin-top:.5rem; }
+  @media (max-width:767px){
+    table.cx, table.cx tbody, table.cx tr, table.cx td{ display:block; width:100%; }
+    .cx-line > .input{ flex-basis:7.5rem; }
+  }
+  @media print{
+    table.vt .acao, table.vt .rub, table.vt col.c-acao, table.vt col.c-rub{ display:none !important; }
+    /* textos explicativos destas seções FAZEM parte do PDF (justificados) */
+    #sec-implantacao .field-hint, #sec-rh .field-hint, #sec-operacional .field-hint{ display:block !important; font-size:8.5pt; text-align:justify; margin:1mm 0 2mm; }
+    table.cx{ table-layout:fixed; width:100% !important; break-inside:avoid; page-break-inside:avoid; }
+    table.cx td{ padding:1mm 1.5mm !important; border:.5px solid #555 !important; }
+    table.cx .print-mirror{ border:.5px solid #777; border-radius:0; font-size:7.5pt; min-height:1.4em; padding:.5mm 1.5mm; }
+    .cx-line > label, .cx-f > label{ font-size:7.5pt; }
+    .cx-line{ padding-left:2mm; } .cx-line .print-mirror{ flex:0 0 28mm; max-width:28mm; }
+    table.vt th, table.vt td{ border:.5px solid #555 !important; }
+    table.vt tr{ break-inside:avoid; page-break-inside:avoid; }
+    table.vt thead{ display:table-header-group; }
+  }
+</style>
+<style id="item-card-flat-css">
+  /* Seções 8 e 10: um card por item, sem bordas de tabela; só os campos têm borda finíssima */
+  #implantacao-list .item-card, #operacional-list .item-card{ padding:.8rem; }
+  #implantacao-list .item-card + .item-card, #operacional-list .item-card + .item-card{ margin-top:.75rem; }
+  #implantacao-list .item-card-head, #operacional-list .item-card-head{ margin-bottom:.5rem; padding-bottom:.45rem; }
+  table.cx.cx-flat{ background:transparent; margin-bottom:.6rem; }
+  table.cx.cx-flat td{ border:0; padding:0 .6rem 0 0; vertical-align:bottom; }
+  table.cx.cx-flat .cx-f{ flex-direction:column; align-items:stretch; gap:.15rem; }
+  table.cx.cx-flat .cx-f > .input{ flex:0 0 auto; width:100%; }
+  :is(#implantacao-list, #operacional-list) .vt-wrap{ border:0; border-radius:0; background:transparent; }
+  :is(#implantacao-list, #operacional-list) table.vt :is(th, td){ border:0; padding:.15rem .15rem; }
+  :is(#implantacao-list, #operacional-list) table.vt thead th{ background:transparent; color:var(--ink-soft); vertical-align:bottom; }
+  :is(#implantacao-list, #operacional-list) table.vt.vt-simple.vt-multi{ min-width:106rem; }
+  :is(#implantacao-list, #operacional-list) :is(table.cx, table.vt) .input{ border:.5px solid #6b7064; border-radius:3px; }
+  :is(#implantacao-list, #operacional-list) col.c-grupo{ width:7.5rem; }
+  :is(#implantacao-list, #operacional-list) col.c-cat{ width:10rem; }
+  :is(#implantacao-list, #operacional-list) col.c-desc{ width:9rem; }
+  :is(#implantacao-list, #operacional-list) col.c-item{ width:9rem; }
+  :is(#implantacao-list, #operacional-list) col.c-acao{ width:8rem; }
+  :is(#implantacao-list, #operacional-list) col.c-mes{ width:4.8rem; }
+  :is(#implantacao-list, #operacional-list) .vt-actions{ margin-top:.2rem; }
+  :is(#implantacao-list, #operacional-list) .vt-title{ margin-bottom:.15rem; }
+  @media screen and (max-width:767px){
+    :is(#implantacao-list, #operacional-list) table.vt.vt-simple.vt-multi{ min-width:0; }
+    table.cx.cx-flat td{ padding:0 0 .4rem; }
+  }
+  @media print{
+    :is(#implantacao-list, #operacional-list) table.vt.vt-simple.vt-multi{ min-width:0 !important; }
+    :is(#implantacao-list, #operacional-list) :is(table.cx, table.vt) :is(th, td){ border:0 !important; }
+    :is(#implantacao-list, #operacional-list) table.vt thead th{ color:#16233D !important; }
+    :is(#implantacao-list, #operacional-list) table.vt col.c-grupo{ width:7%; }
+    :is(#implantacao-list, #operacional-list) table.vt col.c-cat{ width:11%; }
+    :is(#implantacao-list, #operacional-list) table.vt col.c-desc{ width:8.6%; }
+    :is(#implantacao-list, #operacional-list) table.vt col.c-item{ width:10%; }
+    :is(#implantacao-list, #operacional-list) table.vt col.c-mes{ width:4.7%; }
+    :is(#implantacao-list, #operacional-list) table.vt td.mes .print-mirror{ border:.5px solid #999; }
+  }
+</style>
+<style id="v82-css">
+  /* Cantos arredondados nas tabelas e campos de custo (Seções 8, 9 e 10) */
+  #sec-rh table.cx, #sec-rh table.vt{ border-collapse:separate; border-spacing:0; }
+  #sec-rh table.cx{ border:.5px solid #6b7064; border-radius:8px; }
+  #sec-rh table.cx td{ border:0; border-bottom:.5px solid #6b7064; border-right:.5px solid #6b7064; }
+  #sec-rh table.cx tr > td:last-child{ border-right:0; }
+  #sec-rh table.cx tr:last-child > td{ border-bottom:0; border-radius:0 0 7.5px 7.5px; }
+  #sec-rh .vt-wrap{ border:.5px solid #6b7064; border-radius:8px; }
+  #sec-rh table.vt th, #sec-rh table.vt td{ border:0; border-bottom:.5px solid #6b7064; border-right:.5px solid #6b7064; }
+  #sec-rh table.vt tr > :last-child{ border-right:0; }
+  #sec-rh table.vt tbody tr:last-child > td{ border-bottom:0; }
+  #sec-rh table.vt thead th:first-child{ border-top-left-radius:7px; }
+  #sec-rh table.vt thead th:last-child{ border-top-right-radius:7px; }
+  #sec-rh table.cx .input, #sec-rh table.vt .input,
+  :is(#implantacao-list, #operacional-list) :is(table.cx, table.vt) .input,
+  :is(#implantacao-list, #rh-list, #operacional-list) textarea.input{ border-radius:6px; }
+  :is(#implantacao-list, #operacional-list) :is(table.cx.cx-flat, .vt-wrap){ border:.5px solid #c3c8bf; border-radius:8px; background:#fff; }
+  :is(#implantacao-list, #operacional-list) table.cx.cx-flat{ border-collapse:separate; border-spacing:0; }
+  :is(#implantacao-list, #operacional-list) table.cx.cx-flat td{ padding:.35rem .35rem .4rem; }
+  :is(#implantacao-list, #operacional-list) table.vt{ border-collapse:separate; border-spacing:0; }
+  :is(#implantacao-list, #operacional-list) table.vt thead th{ background:#F0F2EE; padding-top:.35rem; padding-bottom:.35rem; }
+  :is(#implantacao-list, #operacional-list) table.vt thead th:first-child{ border-radius:7px 0 0 0; }
+  :is(#implantacao-list, #operacional-list) table.vt thead th:last-child{ border-radius:0 7px 0 0; }
+  .vt-alerta{ font-weight:500; font-size:.78rem; color:#8a5a12; }
+  .vt-modo{ display:block; margin-top:.2rem; font-size:.66rem; color:var(--success); line-height:1.2; }
+  .vt-modo.manual{ color:#8a5a12; }
+  @media screen and (max-width:767px){
+    #sec-rh table.cx td{ border-right:0; }
+    :is(#implantacao-list, #operacional-list) .vt-wrap{ border:0; }
+  }
+  @media print{
+    /* Tabelas arredondadas também no PDF */
+    #sec-rh table.cx{ border:.5px solid #555 !important; border-radius:8px; }
+    #sec-rh table.cx td{ border:0 !important; border-bottom:.5px solid #555 !important; border-right:.5px solid #555 !important; }
+    #sec-rh table.cx tr > td:last-child{ border-right:0 !important; }
+    #sec-rh table.cx tr:last-child > td{ border-bottom:0 !important; }
+    #sec-rh .vt-wrap{ border:.5px solid #555 !important; border-radius:8px; }
+    #sec-rh table.vt th, #sec-rh table.vt td{ border:0 !important; border-bottom:.5px solid #555 !important; border-right:.5px solid #555 !important; }
+    #sec-rh table.vt tr > :last-child{ border-right:0 !important; }
+    #sec-rh table.vt tbody tr:last-child > td{ border-bottom:0 !important; }
+    :is(#implantacao-list, #operacional-list) :is(table.cx.cx-flat, .vt-wrap){ border:.5px solid #777 !important; border-radius:8px !important; }
+    /* Campos sem borda no PDF */
+    #sec-implantacao .print-mirror, #sec-rh .print-mirror, #sec-operacional .print-mirror,
+    #sec-rh table.vt td.mes .print-mirror{ border:0 !important; background:transparent !important; }
+    /* Seções 8 e 10: cabeçalho do item em uma só linha */
+    :is(#implantacao-list, #operacional-list) table.cx.cx-flat,
+    :is(#implantacao-list, #operacional-list) table.cx.cx-flat tbody{ display:block !important; width:100% !important; }
+    :is(#implantacao-list, #operacional-list) table.cx.cx-flat tr{ display:flex !important; flex-wrap:nowrap; align-items:baseline; justify-content:space-between; gap:2mm; }
+    :is(#implantacao-list, #operacional-list) table.cx.cx-flat td{ display:block !important; width:auto !important; flex:1 1 auto; padding:1mm 1.5mm !important; }
+    :is(#implantacao-list, #operacional-list) table.cx.cx-flat .cx-f{ flex-direction:row; flex-wrap:nowrap; align-items:baseline; gap:1mm; }
+    :is(#implantacao-list, #operacional-list) table.cx.cx-flat .cx-f > label{ white-space:nowrap; margin:0; }
+    :is(#implantacao-list, #operacional-list) table.cx.cx-flat .cx-f > .print-mirror{ flex:0 1 auto; width:auto !important; padding:0 !important; min-height:0; white-space:nowrap; text-align:left; }
+    :is(#implantacao-list, #operacional-list) table.vt thead th{ background:#F0F2EE !important; }
+  }
+  @media print and (orientation:portrait){
+    :is(#implantacao-list, #operacional-list) table.cx.cx-flat tr{ gap:.5mm; }
+    :is(#implantacao-list, #operacional-list) table.cx.cx-flat td{ padding:1mm .5mm !important; }
+    :is(#implantacao-list, #operacional-list) table.cx.cx-flat :is(label, .print-mirror){ font-size:6pt !important; }
+  }
+</style>
+<style id="v83-css">
+  /* Seção 9 na tela: sem bordas de tabela; só os campos mantêm borda finíssima. Moldura externa arredondada e discreta */
+  #sec-rh table.cx.cx-rh{ border:.5px solid #c3c8bf; border-radius:8px; background:#fff; }
+  #sec-rh table.cx.cx-rh td{ border:0; }
+  #sec-rh .vt-wrap{ border:.5px solid #c3c8bf; border-radius:8px; background:#fff; }
+  #sec-rh table.vt th, #sec-rh table.vt td{ border:0; }
+  #sec-rh table.vt thead th{ background:#F0F2EE; color:var(--ink-soft); }
+  #sec-rh table.cx .input, #sec-rh table.vt .input{ border:.5px solid #6b7064; border-radius:6px; }
+  @media print{
+    /* Seção 9 no PDF: Meta/Função e Vínculo/Quantidade em uma linha cada; campos sem borda */
+    #sec-rh table.cx.cx-rh, #sec-rh table.cx.cx-rh > tbody{ display:block !important; width:100% !important; }
+    #sec-rh table.cx.cx-rh > tbody > tr{ display:flex !important; align-items:stretch; }
+    #sec-rh table.cx.cx-rh > tbody > tr > td{ display:block !important; flex:1 1 50%; min-width:0; }
+    #sec-rh table.cx.cx-rh tr:nth-child(-n+2){ display:flex !important; flex-wrap:nowrap; align-items:baseline; gap:4mm; }
+    #sec-rh table.cx.cx-rh tr:nth-child(-n+2) > td{ display:block !important; flex:1 1 auto; min-width:0; width:auto !important; border:0 !important; padding:1mm 1.5mm !important; }
+    #sec-rh table.cx.cx-rh tr:nth-child(-n+2) .cx-f{ flex-direction:row; flex-wrap:nowrap; align-items:baseline; gap:1mm; }
+    #sec-rh table.cx.cx-rh tr:nth-child(-n+2) .cx-f > label{ white-space:nowrap; margin:0; }
+    #sec-rh table.cx.cx-rh tr:nth-child(-n+2) .cx-f > .print-mirror{ flex:1 1 auto; width:auto !important; padding:0 !important; min-height:0; text-align:left; }
+    #sec-rh table.cx.cx-rh tbody > tr:nth-child(2) > td{ border-bottom:0 !important; }
+    #sec-rh table.vt thead th{ background:#F0F2EE !important; }
+  }
+</style>
 </head>
 <body class="antialiased">
 <a href="#main-content" class="skip-link">Pular para o conteúdo do formulário</a>
@@ -1300,9 +1405,18 @@
         <div class="section-card">
           <p class="section-kicker">Seção 8 · aba "Custo_Implantação"</p>
           <h2 id="h-implantacao" class="font-serif text-2xl mt-3">Custo de implantação</h2>
-          <p class="instr keep-print sec-intro">Itens de custo único (bens, adequações, aquisições iniciais). O total de cada item é calculado como quantidade × valor unitário. Em cada linha de despesa escolha a categoria (o grupo é preenchido automaticamente), descreva o item e distribua o valor pelos meses — digitando em cada mês ou usando o menu "Ação" (Todo o período, Mês 1, Repetir Mês 1 até o Mês X, Remover). Use "Adicionar Item de Despesa" para incluir outras linhas no mesmo card.</p>
+          <p class="field-hint mt-2">Itens de custo único (bens, adequações e aquisições iniciais). Use um card para cada item de despesa: informe a meta vinculada, a unidade, a quantidade e o valor unitário (o total é calculado automaticamente), escolha a categoria (o grupo é preenchido sozinho), descreva o item e lance os valores nos meses. A coluna “Ação” divide o total pelos meses do período de execução, lança em parcela única no Mês 1, repete o Mês 1 até o mês desejado ou remove o item. Cada mês continua editável. Se alterar a quantidade ou o valor unitário depois, escolha a ação novamente.</p>
 
-          <div id="csv-mount-impl" class="no-print"></div>
+          <div class="csv-tools no-print" data-csv-tools="impl">
+            <div class="flex flex-wrap items-center gap-2">
+              <button type="button" class="btn btn-outline btn-sm" data-csv-action="import" data-csv-type="impl">Importar dados (CSV)</button>
+              <button type="button" class="btn btn-outline btn-sm" data-csv-action="template" data-csv-type="impl">Baixar modelo CSV</button>
+              <input type="file" accept=".csv,text/csv,text/plain" class="visually-hidden" tabindex="-1" data-csv-file="impl" aria-label="Escolher arquivo CSV de Custo de Implantação">
+              <span class="field-hint" style="margin:0;">Preenche os cards vazios e cria novos cards conforme as linhas do arquivo.</span>
+            </div>
+            <details class="csv-help"><summary>Como preparar o arquivo CSV (orientações e colunas)</summary><div data-csv-help="impl"></div></details>
+            <p class="csv-status no-print" role="status" aria-live="polite" data-csv-status="impl" hidden></p>
+          </div>
 
           <div id="implantacao-list" class="mt-6 space-y-5" aria-live="polite"></div>
 
@@ -1320,18 +1434,21 @@
         <div class="section-card">
           <p class="section-kicker">Seção 9 · aba "Custo_RH"</p>
           <h2 id="h-rh" class="font-serif text-2xl mt-3">Custo de recursos humanos</h2>
-          <p class="instr keep-print sec-intro">
-            Um card por função/cargo. O salário bruto (salário base + adicionais), o salário líquido, o FGTS, o 13º e as férias (1/3)
-            com seus encargos são calculados automaticamente; os demais encargos e benefícios são lançados nas listas do card.
-            No "Lançamento mensal por função/cargo e rubrica" cada linha é uma rubrica do mesmo cargo: escolha a rubrica, lance os
-            meses (digitando ou pelo menu "Ação") e use "Adicionar Rubrica" para incluir outras linhas sem duplicar o cargo.
-            Só a parcela de 1/3 das férias é provisionada (Férias 1/12 não é lançada).
-          </p>
+          <p class="field-hint mt-2">Um card por função/cargo. Informe o salário base e os adicionais: o salário bruto é a soma deles, e o salário líquido é o bruto menos INSS, IRRF e outros descontos, mais o salário família. FGTS (8%), 13º, férias (1/3) e seus reflexos são sugeridos a partir do salário bruto e podem ser editados (borda dourada = valor lançado manualmente; “Recalcular automaticamente” restaura a sugestão). O total/mês soma salário líquido, retenções (INSS, IRRF e outros descontos, que a entidade recolhe), encargos e benefícios, multiplicado pela quantidade. Na tabela de lançamento mensal cada linha é uma rubrica: escolha a rubrica e use a “Ação” (todo o período, Mês 1, repetir o Mês 1 até o Mês X ou remover); “Adicionar Rubrica” inclui novas linhas sem repetir o cabeçalho. Só a parcela de 1/3 das férias é provisionada (Férias 1/12 não é lançada). <strong>Atenção:</strong> as rubricas lançadas pela “Ação” são recalculadas automaticamente quando você altera valores ou a quantidade no card, troca a rubrica da linha ou muda o período de execução (Seção 3). A linha em que um mês for digitado manualmente passa a ser “manual” e deixa de ser recalculada (escolha a “Ação” novamente para voltar ao automático). Confira os lançamentos após qualquer alteração.</p>
 
           <datalist id="dl-vinculo-sugestao"></datalist>
-          <p class="field-hint">O campo "Vínculo" já lista as opções da aba "Instruções" (CLT, voluntário, RPA, contrato, estágio, bolsa, etc.).</p>
+          <p class="field-hint">O campo "Vínculo" abaixo já lista as opções da aba "Instruções" (CLT, voluntário, RPA, contrato, estágio, bolsa, etc.).</p>
 
-          <div id="csv-mount-rh" class="no-print"></div>
+          <div class="csv-tools no-print" data-csv-tools="rh">
+            <div class="flex flex-wrap items-center gap-2">
+              <button type="button" class="btn btn-outline btn-sm" data-csv-action="import" data-csv-type="rh">Importar dados (CSV)</button>
+              <button type="button" class="btn btn-outline btn-sm" data-csv-action="template" data-csv-type="rh">Baixar modelo CSV</button>
+              <input type="file" accept=".csv,text/csv,text/plain" class="visually-hidden" tabindex="-1" data-csv-file="rh" aria-label="Escolher arquivo CSV de Custo de RH">
+              <span class="field-hint" style="margin:0;">Preenche os cards vazios e cria novos cards conforme as linhas do arquivo.</span>
+            </div>
+            <details class="csv-help"><summary>Como preparar o arquivo CSV (orientações e colunas)</summary><div data-csv-help="rh"></div></details>
+            <p class="csv-status no-print" role="status" aria-live="polite" data-csv-status="rh" hidden></p>
+          </div>
 
           <div id="rh-list" class="mt-6 space-y-5" aria-live="polite"></div>
 
@@ -1349,9 +1466,18 @@
         <div class="section-card">
           <p class="section-kicker">Seção 10 · aba "Custo_Operacional"</p>
           <h2 id="h-operacional" class="font-serif text-2xl mt-3">Custo operacional</h2>
-          <p class="instr keep-print sec-intro">Despesas recorrentes de manutenção e funcionamento. O total mensal de cada item é calculado como valor unitário × quantidade/mês. Em cada linha de despesa escolha a categoria (o grupo é preenchido automaticamente), descreva o item e distribua o valor pelos meses — digitando em cada mês ou usando o menu "Ação" (Todo o período, Mês 1, Repetir Mês 1 até o Mês X, Remover). Use "Adicionar Item de Despesa" para incluir outras linhas no mesmo card.</p>
+          <p class="field-hint mt-2">Despesas recorrentes de manutenção e funcionamento. Use um card para cada item de despesa: informe a meta vinculada, a unidade, a quantidade (por mês) e o valor unitário. O total (quantidade × valor unitário) é o valor de um mês: a ação “Todo o período” o lança em cada mês do período de execução; também é possível lançar só no Mês 1, repetir o Mês 1 até o mês desejado ou remover o item. Cada mês continua editável. Se alterar a quantidade ou o valor unitário depois, escolha a ação novamente.</p>
 
-          <div id="csv-mount-oper" class="no-print"></div>
+          <div class="csv-tools no-print" data-csv-tools="oper">
+            <div class="flex flex-wrap items-center gap-2">
+              <button type="button" class="btn btn-outline btn-sm" data-csv-action="import" data-csv-type="oper">Importar dados (CSV)</button>
+              <button type="button" class="btn btn-outline btn-sm" data-csv-action="template" data-csv-type="oper">Baixar modelo CSV</button>
+              <input type="file" accept=".csv,text/csv,text/plain" class="visually-hidden" tabindex="-1" data-csv-file="oper" aria-label="Escolher arquivo CSV de Custo Operacional">
+              <span class="field-hint" style="margin:0;">Preenche os cards vazios e cria novos cards conforme as linhas do arquivo.</span>
+            </div>
+            <details class="csv-help"><summary>Como preparar o arquivo CSV (orientações e colunas)</summary><div data-csv-help="oper"></div></details>
+            <p class="csv-status no-print" role="status" aria-live="polite" data-csv-status="oper" hidden></p>
+          </div>
 
           <div id="operacional-list" class="mt-6 space-y-5" aria-live="polite"></div>
 
@@ -1812,12 +1938,11 @@ const OUTRA_ESPECIFICAR = 'Outra, a especificar';
 const RUBRICAS_RH = [
   { key:'__total',       label:'Total do cargo (todas as rubricas)', cat:'' },
   { key:'liquido',       label:'Salário líquido',                    cat:'Salários E Ordenados (Exceto Diretoria)' },
-  { key:'inss',          label:'INSS R$ (retido)',                   cat:'INSS' },
-  { key:'irrf',          label:'IRRF R$',                            cat:'IRRF' },
-  { key:'outrosdesc',    label:'Outros descontos',                   cat:'' },
+  { key:'inss',          label:'INSS retido do empregado',           cat:'INSS' },
+  { key:'irrf',          label:'IRRF retido',                        cat:'IRRF' },
+  { key:'outrosdesc',    label:'Outros descontos retidos',           cat:'Outras Despesas De Recursos Humanos' },
   { key:'fgts',          label:'FGTS patronal (8%)',                 cat:'FGTS' },
   { key:'insspatronal',  label:'Contribuição INSS patronal',         cat:'Contribuição Ao INSS – Cota Patronal' },
-  { key:'encoutros',     label:'Outros encargos e provisões',        cat:'' },
   { key:'decimo',        label:'13º salário (1/12)',                 cat:'13° Salário' },
   { key:'inss13',        label:'INSS s/13º (1/12)',                  cat:'INSS' },
   { key:'fgts13',        label:'FGTS s/13º (1/12)',                  cat:'FGTS' },
@@ -1825,6 +1950,7 @@ const RUBRICAS_RH = [
   { key:'fgtsferias',    label:'FGTS s/férias (1/3)',                cat:'FGTS' },
   { key:'inssferias',    label:'INSS s/férias (1/3)',                cat:'INSS' },
   { key:'irrfferias',    label:'IRRF s/férias (1/3)',                cat:'IRRF' },
+  { key:'encoutros',     label:'Outros encargos patronais',          cat:'Outras Despesas De Recursos Humanos' },
   { key:'indenizacoes',  label:'Indenizações',                       cat:'Indenizações' },
   { key:'multa',         label:'Multa rescisória FGTS',              cat:'Multa Rescisória FGTS' },
   { key:'aviso',         label:'Aviso prévio',                       cat:'Aviso Prévio' },
@@ -2514,118 +2640,71 @@ function vtTotalCell(p){
   return `<td class="num tot" data-label="Total R$"><span class="vt-total" id="${p}-totalvig">R$ 0,00</span></td>`;
 }
 
-/* v7.3 — Linhas de lançamento (Seções 8, 9 e 10): cada card tem uma ou mais linhas de despesa/rubrica.
-   Linha = Grupo / Categoria / Descrição / Item (ou Rubrica) / Ação  +  Mês 1…12 / Total R$.
-   A linha 1 mantém os ids originais (impl-<uid>-item, …-mes-1…); as demais usam <tipo>-<uid>-r<k>-…
-   O menu "Ação" (sem id: não entra no JSON) preenche os meses como atalho; os 12 campos seguem editáveis. */
-const LANC = {
-  impl: { list:'implantacao-list', kind:'total',   cats:CATEGORIAS_NAO_RH, add:'Adicionar Item de Despesa' },
-  oper: { list:'operacional-list', kind:'monthly', cats:CATEGORIAS_NAO_RH, add:'Adicionar Item de Despesa' },
-  rh:   { list:'rh-list',          kind:'rubrica', cats:CATEGORIAS_RH,     add:'Adicionar Rubrica' }
-};
+/* Linhas de lançamento mensal (Seções 8, 9 e 10): o cabeçalho aparece uma só vez e cada "Adicionar…" acrescenta
+   uma linha na mesma tabela. A 1ª linha mantém os ids de sempre (rascunhos/JSON antigos seguem válidos);
+   as demais usam o prefixo "<card>-r<N>-…". */
+function rowPref(p, r){ return r === 1 ? p : p + '-r' + r; }
+function acaoOptionsHTML(rotuloRemover){
+  return '<option value="" selected>Escolher…</option><option value="todo">Todo o período</option><option value="mes1">Mês 1 (parcela única)</option>' +
+    Array.from({length:11}, (_, i) => '<option value="rep' + (i + 2) + '">Repetir Mês 1 até Mês ' + (i + 2) + '</option>').join('') +
+    '<option value="remover">' + (rotuloRemover || 'Remover linha') + '</option>';
+}
+function costRowHTML(type, p, r){
+  const rp = rowPref(p, r), rh = type === 'rh';
+  const cells = [
+    vtCell('Grupo de despesas', vtGrupoField(rp)),
+    vtCell('Categoria de despesas', vtCategoriaField(rp, rh ? CATEGORIAS_RH : CATEGORIAS_NAO_RH)),
+    vtCell('Descrição', `<label class="visually-hidden" for="${rp}-descricao">Descrição${rh ? '' : ' (obrigatória em categorias Diversos/Outros)'}</label><textarea class="input vt-item" rows="2" id="${rp}-descricao" name="${rp}-descricao" aria-describedby="${rp}-cathint"></textarea><p class="vt-cathint no-print" id="${rp}-cathint" data-cat-hint-for="${rp}-categoria" hidden></p>`)
+  ];
+  if(rh){
+    cells.push(vtCell('Função-cargo / CH semanal / especificação', `<label class="visually-hidden" for="${rp}-funcaolinha">Função-cargo / CH semanal / especificação (preenchida no topo do card)</label><textarea class="input vt-item readonly" rows="2" id="${rp}-funcaolinha" readonly tabindex="-1"></textarea>`));
+    cells.push(`<td class="txt rub no-print" data-label="Rubrica"><label class="visually-hidden" for="${rp}-rubrica">Rubrica a lançar nesta linha</label><select class="input" id="${rp}-rubrica" name="${rp}-rubrica">${RUBRICAS_RH.map(x => `<option value="${x.key}">${esc(x.label)}</option>`).join('')}</select></td>`);
+  } else {
+    cells.push(vtCell('Item de despesa', `<label class="visually-hidden" for="${rp}-item">Item de despesa</label><textarea class="input vt-item" rows="2" id="${rp}-item" name="${rp}-item" required></textarea>`));
+  }
+  cells.push(`<td class="txt acao no-print" data-label="Ação"><label class="visually-hidden" for="${rp}-acao">Ação desta linha</label><select class="input" id="${rp}-acao" data-row-action="1" title="Todo o período, Mês 1, repetir o Mês 1 até o mês desejado ou remover">${acaoOptionsHTML(rh ? 'Remover linha' : 'Remover')}</select>${rh ? `<input type="hidden" id="${rp}-modo" name="${rp}-modo" value=""><span class="vt-modo" id="${rp}-modoinfo"></span>` : ''}</td>`);
+  return `<tr data-row="${r}" data-prefix="${rp}">${cells.join('')}${vtMonthCells(rp)}${vtTotalCell(rp)}</tr>`;
+}
+function costTableHTML(type, p){
+  const rh = type === 'rh';
+  const cols = rh ? '<col class="c-grupo"><col class="c-cat"><col class="c-desc"><col class="c-func"><col class="c-rub"><col class="c-acao">'
+                  : '<col class="c-grupo"><col class="c-cat"><col class="c-desc"><col class="c-item"><col class="c-acao">';
+  const heads = rh
+    ? '<th scope="col" class="txt">Grupo de despesas</th><th scope="col" class="txt">Categoria de despesas</th><th scope="col" class="txt">Descrição</th><th scope="col" class="txt">Função-cargo / CH semanal / especificação <span aria-hidden="true">*</span></th><th scope="col" class="txt rub no-print">Rubrica (escolher)</th><th scope="col" class="txt acao no-print">Ação (escolher)</th>'
+    : '<th scope="col" class="txt">Grupo de despesas</th><th scope="col" class="txt">Categoria de despesas</th><th scope="col" class="txt">Descrição</th><th scope="col" class="txt">Item de despesa <span aria-hidden="true">*</span></th><th scope="col" class="txt acao no-print">Ação (escolher)</th>';
+  return `
+  <div class="vt-wrap">
+    <table class="vt ${rh ? 'vt-rh' : 'vt-simple'} vt-multi">
+      <colgroup>${cols}<col class="c-mes" span="12"><col class="c-tot"></colgroup>
+      <thead><tr>${heads}${vtMonthHeadCells()}<th scope="col" class="num tot">Total R$</th></tr></thead>
+      <tbody class="vt-rows" data-next-row="2">${costRowHTML(type, p, 1)}</tbody>
+    </table>
+  </div>
+  <div class="vt-actions no-print">
+    ${rh ? `<button type="button" class="btn btn-outline btn-sm" data-action="add-row" data-row-card="${p}">Adicionar Rubrica</button>` : ''}
+    <span class="vt-msg no-print" aria-live="polite"></span>
+    ${type === 'impl' ? `<span class="vt-status no-print" id="${p}-fillstatus"></span>` : ''}
+  </div>`;
+}
+function cxField(label, inner){ return `<td><div class="cx-f">${label}${inner}</div></td>`; }
+
 const VT_TITULOS = {
   total:   'Divide o total do item (quantidade × valor unitário) em parcelas iguais pelos meses do período de execução (Seção 3); sem período informado, usa 12 meses.',
   monthly: 'Lança o total mensal do item (valor unitário × quantidade/mês) em cada mês do período de execução (Seção 3); sem período informado, usa 12 meses.',
   rubrica: 'Lança o valor mensal da rubrica selecionada (já multiplicado pela quantidade) em cada mês do período de execução (Seção 3); sem período informado, usa 12 meses.'
 };
-function lancPf(type, u, k){ return k === 1 ? type + '-' + u : type + '-' + u + '-r' + k; }
-function lancRows(card){ return Array.from(card.querySelectorAll('.lanc-row')); }
-function lancAcaoHTML(type, u, k, pf){
-  const cfg = LANC[type];
-  const tf = type === 'impl' ? 'impl-' + u + '-total' : type === 'oper' ? 'oper-' + u + '-totalmes' : '';
-  const rub = type === 'rh' ? ` data-rh-uid="${u}" data-rub-sel="${pf}-rubrica"` : '';
-  let ops = '<option value="">Escolher…</option>'
-    + '<option value="all">Todo o período</option>'
-    + '<option value="first">Mês 1 (parcela única)</option>';
-  for(let x=2;x<=12;x++) ops += `<option value="rep-${x}">Repetir Mês 1 até Mês ${x}</option>`;
-  if(k > 1) ops += '<option value="del">Remover linha</option>';
-  return `<select class="input lanc-acao" data-lanc-acao aria-label="Ação desta linha (lançar nos meses ou remover)" title="${esc(VT_TITULOS[cfg.kind])}" data-month-prefix="${pf}" data-cost-kind="${cfg.kind}" data-total-field="${tf}"${rub}>${ops}</select>`;
-}
-function lancRowHTML(type, u, k){
-  const cfg = LANC[type], pf = lancPf(type, u, k);
-  const ident = type === 'rh'
-    ? `<div class="lf"><label class="lbl" for="${pf}-rubrica">Rubrica</label><select class="input" id="${pf}-rubrica" name="${pf}-rubrica">${RUBRICAS_RH.map(r => `<option value="${r.key}">${esc(r.label)}</option>`).join('')}</select></div>`
-    : `<div class="lf"><label class="lbl" for="${pf}-item">Item de Despesa <span aria-hidden="true">*</span></label><textarea class="input vt-item" rows="1" id="${pf}-item" name="${pf}-item" required></textarea></div>`;
-  let meses = '';
-  for(let n=1;n<=12;n++){
-    meses += `<div class="lf"><label class="lbl" for="${pf}-mes-${n}">Mês ${n}</label><input class="input input-money money-mask" type="text" inputmode="decimal" id="${pf}-mes-${n}" name="${pf}-mes-${n}" value="0,00"></div>`;
-  }
-  meses += `<div class="lf lf-tot"><span class="lbl">Total R$</span><span class="vt-total" id="${pf}-totalvig">R$ 0,00</span></div>`;
+/* Os três botões de lançamento mensal (iguais nas Seções 8, 9 e 10). */
+function vtActionsHTML(p, kind, totalField, extraAttrs, withStatus, copyLabel){
+  const base = `data-month-prefix="${p}" data-cost-kind="${kind}" data-total-field="${totalField}" ${extraAttrs || ''}`;
   return `
-  <div class="lanc-row ${type}" data-pf="${pf}" data-k="${k}" data-type="${type}" data-uid-card="${u}">
-    <div class="lanc-top">
-      <div class="lf"><label class="lbl" for="${pf}-grupo">Grupo de Despesas</label><textarea class="input readonly vt-grupo" rows="1" id="${pf}-grupo" readonly></textarea></div>
-      <div class="lf"><label class="lbl" for="${pf}-categoria">Categoria de Despesas</label><select class="input categoria-select" id="${pf}-categoria" name="${pf}-categoria" data-grupo-for="${pf}-grupo">${categoriaOptionsHTML(cfg.cats)}</select></div>
-      <div class="lf"><label class="lbl" for="${pf}-descricao">Descrição</label><textarea class="input vt-item" rows="1" id="${pf}-descricao" name="${pf}-descricao"></textarea></div>
-      ${ident}
-      <div class="lf lf-act no-print"><label class="lbl">Ação</label>${lancAcaoHTML(type, u, k, pf)}</div>
-    </div>
-    <div class="lanc-meses">${meses}</div>
-    <p class="vt-msg lanc-msg no-print" aria-live="polite"></p>
-    <p class="field-hint vt-cathint no-print" id="${pf}-cathint" data-cat-hint-for="${pf}-categoria" hidden></p>
+  <div class="vt-actions">
+    <button type="button" class="btn btn-outline btn-sm" data-fill-months="copy-cost" ${base} title="${esc(VT_TITULOS[kind])}">${esc(copyLabel)}</button>
+    <button type="button" class="btn btn-outline btn-sm" data-fill-months="first" ${base} title="Lança todo o valor no Mês 1 e zera os demais meses.">Parcela única (Mês 1)</button>
+    <button type="button" class="btn btn-outline btn-sm" data-fill-months="repeat-first" data-month-prefix="${p}" title="Copia o valor que estiver no Mês 1 para os Meses 2 a 12.">Repetir valor do Mês 1</button>
+    <span class="vt-msg no-print" aria-live="polite"></span>
+    ${withStatus ? `<span class="vt-status no-print" id="${p}-fillstatus"></span>` : ''}
   </div>`;
 }
-function lancListHTML(type, u, titulo){
-  const cfg = LANC[type], p = type + '-' + u;
-  return `
-    <p class="lanc-tit">${esc(titulo)}</p>
-    <div class="lanc-list" id="${p}-lancs">${lancRowHTML(type, u, 1)}</div>
-    <div class="vt-actions no-print">
-      <button type="button" class="btn btn-outline btn-sm" data-action="lanc-add" data-lanc-type="${type}" data-lanc-uid="${u}" title="Inclui mais uma linha neste mesmo card.">+ ${esc(cfg.add)}</button>
-      ${type === 'impl' ? `<span class="vt-status no-print" id="${p}-fillstatus"></span>` : ''}
-    </div>
-    ${type === 'rh' ? `<p class="vt-status no-print" id="${p}-rubaviso" data-state="warn" role="status"></p>` : ''}`;
-}
-function lancEnsure(type, u, k){
-  const box = $(type + '-' + u + '-lancs');
-  if(!box || k <= 1 || box.querySelector('.lanc-row[data-k="' + k + '"]')) return null;
-  box.insertAdjacentHTML('beforeend', lancRowHTML(type, u, k));
-  const linha = box.querySelector('.lanc-row[data-k="' + k + '"]');
-  autoResizeAll(linha);
-  return linha;
-}
-function lancAdd(type, u){
-  const box = $(type + '-' + u + '-lancs');
-  if(!box) return;
-  const linhas = lancRows(box);
-  if(type === 'rh' && linhas.length >= RUBRICAS_RH.length - 1){ announce('Todas as rubricas já foram incluídas.'); return; }
-  const k = Math.max.apply(null, linhas.map(b => +b.dataset.k)) + 1;
-  const usadas = type === 'rh' ? linhas.map(b => ($(b.dataset.pf + '-rubrica') || {}).value) : [];
-  const linha = lancEnsure(type, u, k);
-  if(!linha) return;
-  let foco = linha.querySelector('select.categoria-select');
-  if(type === 'rh'){
-    // sugere INSS retido, depois IRRF, depois a primeira rubrica ainda livre
-    const ordem = ['inss', 'irrf'].concat(RUBRICAS_RH.map(r => r.key).filter(x => x !== '__total'));
-    const livre = ordem.find(x => usadas.indexOf(x) < 0);
-    const sel = $(linha.dataset.pf + '-rubrica');
-    if(sel && livre) sel.value = livre;
-    foco = sel;
-  }
-  calcAll();
-  if(foco) foco.focus({ preventScroll:true });
-  linha.scrollIntoView({ block:'nearest', behavior:'smooth' });
-  announce(type === 'rh' ? 'Linha de rubrica incluída no mesmo cargo. Escolha a rubrica e lance os valores mensais.' : 'Linha de despesa incluída no mesmo card.');
-}
-function lancDel(type, u, k){
-  const linha = document.querySelector('#' + type + '-' + u + '-lancs .lanc-row[data-k="' + k + '"]');
-  if(!linha || +k <= 1) return;
-  linha.remove();
-  calcAll();
-  announce('Linha removida do card.');
-}
-/* Ação escolhida no menu da linha: o select volta para "Escolher…" depois de executar. */
-function lancAcao(sel){
-  const v = sel.value;
-  sel.value = '';
-  if(!v) return;
-  const row = sel.closest('.lanc-row');
-  if(!row) return;
-  if(v === 'del'){ lancDel(row.dataset.type, row.dataset.uidCard, row.dataset.k); return; }
-  if(v.indexOf('rep-') === 0){ fillRepeat(row.dataset.pf, parseInt(v.slice(4), 10), sel); return; }
-  fillCost(sel, v === 'all' ? 'copy-cost' : 'first');
-}
-
 /* Seção 8: compara a soma dos meses com o custo (quantidade × valor unitário) do item. */
 function updateFillStatus(p, custo, somaMeses){
   const st = $(p + '-fillstatus');
@@ -2636,29 +2715,28 @@ function updateFillStatus(p, custo, somaMeses){
   else { st.textContent = 'Soma dos meses: ' + formatBRL(somaMeses) + ' · Custo do item: ' + formatBRL(custo) + ' · Diferença: ' + formatBRL(somaMeses - custo); st.dataset.state = 'warn'; }
 }
 
-function cardHead(type, u, badge, nomeAria){
-  const p = type + '-' + u;
-  return `
-    <div class="item-card-head">
-      <span class="item-badge">${esc(badge)}</span>
-      <div class="item-card-actions"><button type="button" class="btn btn-outline btn-sm no-print" data-action="duplicate" data-dup-type="${type}" data-dup-uid="${u}" title="Cria uma cópia deste card, com os mesmos dados, logo abaixo dele." aria-label="Duplicar ${nomeAria}">Duplicar</button> <button type="button" class="btn btn-danger-ghost btn-sm" data-action="remove" data-remove-target="${p}" data-remove-type="${type}" aria-label="Remover ${nomeAria}">Remover</button></div>
+function cardHeadHTML(p, type, badge, txtRemover){
+  return `<div class="item-card-head">
+      <span class="item-badge">${badge}</span>
+      <span class="item-card-btns no-print"><button type="button" class="btn btn-outline btn-sm" data-action="duplicate" data-dup-target="${p}" data-dup-type="${type}" aria-label="Duplicar ${txtRemover}" title="Cria uma cópia deste card logo abaixo, com os mesmos dados">Duplicar</button><button type="button" class="btn btn-danger-ghost btn-sm" data-action="remove" data-remove-target="${p}" data-remove-type="${type}" aria-label="Remover ${txtRemover}">Remover</button></span>
     </div>`;
 }
 function buildImplantacaoCard(u){
   const p = 'impl-' + u;
   return `
-  <div class="item-card cc" id="${p}" data-uid="${u}" data-type="impl">
-    ${cardHead('impl', u, 'Item', 'este item de implantação')}
-    <div class="ifield-row">
-      <div class="ifield w-lg"><label class="lbl" for="${p}-meta">Meta Vinculada:</label><select class="input meta-vinculada-select" id="${p}-meta" name="${p}-meta"><option value="">— selecione —</option></select></div>
-      <div class="ifield"><label class="lbl" for="${p}-unidade">Unidade:</label><select class="input" id="${p}-unidade" name="${p}-unidade">${unidadeOptionsHTML()}</select></div>
-      <div class="ifield w-sm"><label class="lbl" for="${p}-quantidade">Quantidade:</label><input class="input" type="number" step="0.01" min="0" id="${p}-quantidade" name="${p}-quantidade" value="0"></div>
-      <div class="ifield w-sm"><label class="lbl" for="${p}-valorunit">Valor unitário R$:</label><input class="input input-money money-mask" type="text" inputmode="decimal" id="${p}-valorunit" name="${p}-valorunit" value="0,00"></div>
-      <div class="ifield"><label class="lbl" for="${p}-total">Total R$ (qtd. × valor):</label><input class="input readonly input-money" type="text" id="${p}-total" readonly value="R$ 0,00"></div>
-    </div>
-    ${lancListHTML('impl', u, 'Lançamento mensal (R$)')}
-    <div class="mt-3">
-      <label class="lbl" for="${p}-memoria">Memória de cálculo e justificativa / critério de rateio</label>
+  <div class="item-card" id="${p}" data-uid="${u}" data-type="impl">
+    ${cardHeadHTML(p, 'impl', 'Item', 'este item de implantação')}
+    <table class="cx cx-flat"><tbody><tr>
+      ${cxField(`<label for="${p}-meta">Meta vinculada:</label>`, `<select class="input meta-vinculada-select" id="${p}-meta" name="${p}-meta"><option value="">— selecione —</option></select>`)}
+      ${cxField(`<label for="${p}-unidade">Unidade:</label>`, `<select class="input" id="${p}-unidade" name="${p}-unidade">${unidadeOptionsHTML()}</select>`)}
+      ${cxField(`<label for="${p}-quantidade">Quantidade:</label>`, `<input class="input" type="number" step="0.01" min="0" id="${p}-quantidade" name="${p}-quantidade" value="0">`)}
+      ${cxField(`<label for="${p}-valorunit">Valor unitário R$:</label>`, `<input class="input input-money money-mask" type="text" inputmode="decimal" id="${p}-valorunit" name="${p}-valorunit" value="0,00">`)}
+      ${cxField(`<label for="${p}-total">Total R$ (qtd. × valor):</label>`, `<input class="input readonly input-money" type="text" id="${p}-total" readonly value="R$ 0,00">`)}
+    </tr></tbody></table>
+    <p class="vt-title">Lançamento mensal (R$)</p>
+    ${costTableHTML('impl', p)}
+    <div class="mt-4">
+      <label class="field-label" for="${p}-memoria">Memória de cálculo e justificativa / critério de rateio</label>
       <textarea class="input" id="${p}-memoria" name="${p}-memoria" rows="2"></textarea>
     </div>
   </div>`;
@@ -2667,108 +2745,105 @@ function buildImplantacaoCard(u){
 function buildOperacionalCard(u){
   const p = 'oper-' + u;
   return `
-  <div class="item-card cc" id="${p}" data-uid="${u}" data-type="oper">
-    ${cardHead('oper', u, 'Item', 'este item operacional')}
-    <div class="ifield-row">
-      <div class="ifield w-lg"><label class="lbl" for="${p}-meta">Meta Vinculada:</label><select class="input meta-vinculada-select" id="${p}-meta" name="${p}-meta"><option value="">— selecione —</option></select></div>
-      <div class="ifield"><label class="lbl" for="${p}-unidade">Unidade:</label><select class="input" id="${p}-unidade" name="${p}-unidade">${unidadeOptionsHTML()}</select></div>
-      <div class="ifield w-sm"><label class="lbl" for="${p}-valorunit">Valor unitário R$:</label><input class="input input-money money-mask" type="text" inputmode="decimal" id="${p}-valorunit" name="${p}-valorunit" value="0,00"></div>
-      <div class="ifield w-sm"><label class="lbl" for="${p}-qtdmes">Quantidade/mês:</label><input class="input" type="number" step="0.01" min="0" id="${p}-qtdmes" name="${p}-qtdmes" value="0"></div>
-      <div class="ifield"><label class="lbl" for="${p}-totalmes">Total R$/mês (valor × qtd.):</label><input class="input readonly input-money" type="text" id="${p}-totalmes" readonly value="R$ 0,00"></div>
-    </div>
-    ${lancListHTML('oper', u, 'Lançamento mensal (R$)')}
-    <div class="mt-3">
-      <label class="lbl" for="${p}-memoria">Memória de cálculo e justificativa / critério de rateio</label>
+  <div class="item-card" id="${p}" data-uid="${u}" data-type="oper">
+    ${cardHeadHTML(p, 'oper', 'Item', 'este item operacional')}
+    <table class="cx cx-flat"><tbody><tr>
+      ${cxField(`<label for="${p}-meta">Meta vinculada:</label>`, `<select class="input meta-vinculada-select" id="${p}-meta" name="${p}-meta"><option value="">— selecione —</option></select>`)}
+      ${cxField(`<label for="${p}-unidade">Unidade:</label>`, `<select class="input" id="${p}-unidade" name="${p}-unidade">${unidadeOptionsHTML()}</select>`)}
+      ${cxField(`<label for="${p}-qtdmes">Quantidade:</label>`, `<input class="input" type="number" step="0.01" min="0" id="${p}-qtdmes" name="${p}-qtdmes" value="0">`)}
+      ${cxField(`<label for="${p}-valorunit">Valor unitário R$:</label>`, `<input class="input input-money money-mask" type="text" inputmode="decimal" id="${p}-valorunit" name="${p}-valorunit" value="0,00">`)}
+      ${cxField(`<label for="${p}-totalmes">Total R$ (qtd. × valor):</label>`, `<input class="input readonly input-money" type="text" id="${p}-totalmes" readonly value="R$ 0,00">`)}
+    </tr></tbody></table>
+    <p class="vt-title">Lançamento mensal (R$)</p>
+    ${costTableHTML('oper', p)}
+    <div class="mt-4">
+      <label class="field-label" for="${p}-memoria">Memória de cálculo e justificativa / critério de rateio</label>
       <textarea class="input" id="${p}-memoria" name="${p}-memoria" rows="2"></textarea>
     </div>
   </div>`;
 }
 
-/* Linha da lista vertical do RH: sinal + rótulo + campo em R$. As linhas "encargo" guardam, em campo oculto,
-   se o usuário já sobrescreveu o valor sugerido (ver encargoValue() em calcAll); o campo oculto viaja no JSON
-   normalmente, por ser só mais um input com id. */
-function rhLinha(u, key, sinal, label, opt){
-  opt = opt || {};
+function cxMoney(u, key, label, extra){
   const id = 'rh-' + u + '-' + key;
-  const esp = opt.esp ? `<input class="input esp-in" type="text" id="rh-${u}-${opt.esp}" name="rh-${u}-${opt.esp}" placeholder="Especificar" aria-label="${esc(label)} — especificar">` : '';
-  const campo = opt.ro
-    ? `<input class="input readonly input-money" type="text" id="${id}" name="${id}" readonly value="R$ 0,00">`
-    : `<input class="input input-money money-mask${opt.enc ? ' rh-encargo' : ''}" type="text" inputmode="decimal" id="${id}" name="${id}" value="0,00">${opt.enc ? `<input type="hidden" id="${id}-touched" name="${id}-touched" value="">` : ''}`;
-  return `<div class="vl${opt.eq ? ' eq' : ''}${opt.esp ? ' has-esp' : ''}"><div class="vl-l"><span class="sg">${esc(sinal)}</span><label for="${id}">${esc(label)}</label>${esp}</div>${campo}</div>`;
+  return `<div class="cx-line"><label for="${id}">${label}</label><input class="input input-money money-mask ${extra || ''}" type="text" inputmode="decimal" id="${id}" name="${id}" value="0,00">${extra === 'rh-encargo' ? `<input type="hidden" id="${id}-touched" name="${id}-touched" value="">` : ''}</div>`;
 }
-
+function cxMoneyEsp(u, key, label){
+  const id = 'rh-' + u + '-' + key;
+  return `<div class="cx-line"><label for="${id}">${label} <span class="no-print">(especificar:</span></label><input class="input cx-esp" type="text" id="${id}-esp" name="${id}-esp" aria-label="Especificar ${esc(label)}"><span class="no-print">)</span><input class="input input-money money-mask" type="text" inputmode="decimal" id="${id}" name="${id}" value="0,00" aria-label="${esc(label)} R$"></div>`;
+}
+function cxRO(u, key, label, strong){
+  const id = 'rh-' + u + '-' + key;
+  return `<h5><label for="${id}">${label}</label><span class="cx-f"><input class="input readonly input-money" type="text" id="${id}" readonly value="R$ 0,00"></span></h5>`;
+}
 function buildRHCard(u){
   const p = 'rh-' + u;
-  const L = (k, s, l, o) => rhLinha(u, k, s, l, o);
   return `
-  <div class="item-card cc" id="${p}" data-uid="${u}" data-type="rh">
-    ${cardHead('rh', u, 'Função/cargo', 'esta função/cargo')}
-
-    <div class="ifield-row">
-      <div class="ifield w-lg"><label class="lbl" for="${p}-meta">Meta Vinculada</label><select class="input meta-vinculada-select" id="${p}-meta" name="${p}-meta"><option value="">— selecione —</option></select></div>
-      <div class="ifield ta w-lg"><label class="lbl" for="${p}-funcao">Função-cargo / CH semanal / Especificação <span aria-hidden="true" style="color:var(--danger)">*</span></label><textarea class="input" id="${p}-funcao" name="${p}-funcao" rows="1" required placeholder="Ex.: Educador social — 40h semanais"></textarea></div>
-    </div>
-    <div class="ifield-row" style="margin-top:.45rem">
-      <div class="ifield w-lg"><label class="lbl" for="${p}-vinculo">Vínculo</label><select class="input" id="${p}-vinculo" name="${p}-vinculo"><option value="" selected>Selecione</option>${VINCULOS_SUGESTAO.map(v => `<option>${esc(v)}</option>`).join('')}</select></div>
-      <div class="ifield w-sm"><label class="lbl" for="${p}-quantidade">Quantidade</label><input class="input" type="number" step="1" min="0" id="${p}-quantidade" name="${p}-quantidade" value="1"></div>
-    </div>
-
-    <div class="vlist" style="margin-top:.7rem">
-      ${L('sbase','','Salário base R$')}
-      ${L('he','(+)','Horas Extras')}
-      ${L('dsr','(+)','DSR s/Horas Extras')}
-      ${L('adnot','(+)','Adicional Noturno')}
-      ${L('dsrnot','(+)','DSR/Adicional Noturno')}
-      ${L('comissoes','(+)','Comissões, gratificações e prêmios/bônus (natureza salarial)')}
-      ${L('outroadic','(+)','Outros adicionais R$',{esp:'outroadicesp'})}
-      ${L('bruto','(=)','Salário bruto (Base + Adicionais)',{ro:true,eq:true})}
-      ${L('inss','(-)','INSS (retido)')}
-      ${L('irrf','(-)','IRRF')}
-      ${L('outrosdesc','(-)','Outros descontos')}
-      ${L('salfamilia','(+)','Salário família')}
-      ${L('liquido','(=)','Salário líquido',{ro:true,eq:true})}
-    </div>
-
-    <div class="vl-sub"><span>Encargos patronais e provisões</span><button type="button" class="btn btn-outline btn-sm no-print" data-action="reset-encargos" data-rh-uid="${u}" title="Os campos com borda dourada foram editados manualmente e deixam de ser recalculados; este botão devolve todos ao cálculo automático.">Recalcular automaticamente</button></div>
-    <div class="vlist">
-      ${L('fgts','(+)','FGTS patronal (8%)',{enc:true})}
-      ${L('insspatronal','(+)','Contribuição INSS patronal')}
-      ${L('decimo','(+)','13º salário (1/12)',{enc:true})}
-      ${L('inss13','(+)','INSS s/13º (1/12)',{enc:true})}
-      ${L('fgts13','(+)','FGTS s/13º (1/12)',{enc:true})}
-      ${L('feriasterco','(+)','Férias (1/3)',{enc:true})}
-      ${L('fgtsferias','(+)','FGTS s/férias (1/3)',{enc:true})}
-      ${L('inssferias','(+)','INSS s/férias (1/3)')}
-      ${L('irrfferias','(+)','IRRF s/férias (1/3)')}
-      ${L('encoutros','(+)','Outros encargos R$',{esp:'encoutrosesp'})}
-    </div>
-
-    <div class="vl-sub"><span>Benefícios e outras despesas (opcional)</span></div>
-    <div class="vlist">
-      ${L('indenizacoes','(+)','Indenizações')}
-      ${L('multa','(+)','Multa rescisória FGTS')}
-      ${L('aviso','(+)','Aviso prévio')}
-      ${L('assistmedica','(+)','Assistência médica')}
-      ${L('assistodonto','(+)','Assistência odontológica')}
-      ${L('valealim','(+)','Vale alimentação')}
-      ${L('valerefeicao','(+)','Vale refeição')}
-      ${L('valetransp','(+)','Vale transporte')}
-      ${L('seguros','(+)','Seguros')}
-      ${L('pis','(+)','Contribuição do PIS')}
-      ${L('gratificacoes','(+)','Gratificações')}
-      ${L('outras','(+)','Outras despesas de RH R$',{esp:'outrasesp'})}
-    </div>
-    <p class="field-hint" style="margin:.5rem 0 0;">Os encargos com marcação automática vêm sugeridos a partir do salário bruto, mas são editáveis; ao editar um campo manualmente ele deixa de ser recalculado (borda dourada). O total soma o que estiver em cada campo, automático ou manual.</p>
-
-    <div class="total-line mt-3">
-      <span class="label">Total R$/mês (Salário líquido + Encargos e Benefícios × Quantidade)</span>
-      <span class="amount" id="${p}-totalmes">R$ 0,00</span>
-    </div>
-
-    ${lancListHTML('rh', u, 'Lançamento mensal por função/cargo e rubrica (R$)')}
-
-    <div class="mt-3">
-      <label class="lbl" for="${p}-memoria">Memória de cálculo e justificativa / critério de rateio</label>
+  <div class="item-card" id="${p}" data-uid="${u}" data-type="rh">
+    ${cardHeadHTML(p, 'rh', 'Função/cargo', 'esta função/cargo')}
+    <table class="cx cx-rh"><tbody>
+      <tr>
+        ${cxField(`<label for="${p}-meta">Meta vinculada:</label>`, `<select class="input meta-vinculada-select" id="${p}-meta" name="${p}-meta"><option value="">— selecione —</option></select>`)}
+        ${cxField(`<label for="${p}-funcao">Função-cargo / CH semanal / Especificação <span aria-hidden="true">*</span>:</label>`, `<input class="input" type="text" id="${p}-funcao" name="${p}-funcao" required autocomplete="off" placeholder="Ex.: Monitor social — 40 h/semana">`)}
+      </tr>
+      <tr>
+        ${cxField(`<label for="${p}-vinculo">Vínculo:</label>`, `<select class="input" id="${p}-vinculo" name="${p}-vinculo"><option value="" selected>Selecione</option>${VINCULOS_SUGESTAO.map(v => `<option>${esc(v)}</option>`).join('')}</select>`)}
+        ${cxField(`<label for="${p}-quantidade">Quantidade:</label>`, `<input class="input" type="number" step="1" min="0" id="${p}-quantidade" name="${p}-quantidade" value="1">`)}
+      </tr>
+      <tr>
+        <td class="cx-blk">
+          <h5><label for="${p}-base">Salário base R$</label><span class="cx-f"><input class="input input-money money-mask" type="text" inputmode="decimal" id="${p}-base" name="${p}-base" value="0,00"></span></h5>
+          ${cxMoney(u, 'horasextras', '(+) Horas extras R$')}
+          ${cxMoney(u, 'dsrhe', '(+) DSR s/ horas extras R$')}
+          ${cxMoney(u, 'adnoturno', '(+) Adicional noturno R$')}
+          ${cxMoney(u, 'dsrnot', '(+) DSR/adicional noturno R$')}
+          ${cxMoney(u, 'comissoes', '(+) Comissões, gratificações e prêmios/bônus (natureza salarial) R$')}
+          ${cxMoneyEsp(u, 'adicoutros', '(+) Outros adicionais')}
+        </td>
+        <td class="cx-blk">
+          ${cxRO(u, 'bruto', '(=) Salário bruto (base + adicionais) R$')}
+          ${cxMoney(u, 'inss', '(−) INSS (retido) R$')}
+          ${cxMoney(u, 'irrf', '(−) IRRF R$')}
+          ${cxMoney(u, 'outrosdesc', '(−) Outros descontos R$')}
+          ${cxMoney(u, 'salfamilia', '(+) Salário família R$')}
+          ${cxRO(u, 'liquido', '(=) Salário líquido R$')}
+        </td>
+      </tr>
+      <tr>
+        <td class="cx-blk">
+          <h5><span>Encargos patronais e provisões</span><button type="button" class="btn btn-outline btn-sm no-print" data-action="reset-encargos" data-rh-uid="${u}" title="Os campos com borda dourada foram editados manualmente">Recalcular automaticamente</button></h5>
+          ${cxMoney(u, 'fgts', '(+) FGTS patronal (8%) R$', 'rh-encargo')}
+          ${cxMoney(u, 'insspatronal', '(+) Contribuição INSS patronal R$')}
+          ${cxMoney(u, 'decimo', '(+) 13º salário (1/12) R$', 'rh-encargo')}
+          ${cxMoney(u, 'inss13', '(+) INSS s/ 13º (1/12) R$', 'rh-encargo')}
+          ${cxMoney(u, 'fgts13', '(+) FGTS s/ 13º (1/12) R$', 'rh-encargo')}
+          ${cxMoney(u, 'feriasterco', '(+) Férias (1/3) R$', 'rh-encargo')}
+          ${cxMoney(u, 'fgtsferias', '(+) FGTS s/ férias (1/3) R$', 'rh-encargo')}
+          ${cxMoney(u, 'inssferias', '(+) INSS s/ férias (1/3) R$')}
+          ${cxMoney(u, 'irrfferias', '(+) IRRF s/ férias (1/3) R$')}
+          ${cxMoneyEsp(u, 'encoutros', '(+) Outros')}
+        </td>
+        <td class="cx-blk">
+          <h5><span>Benefícios e outras despesas (opcional)</span></h5>
+          ${cxMoney(u, 'indenizacoes', '(+) Indenizações R$')}
+          ${cxMoney(u, 'multa', '(+) Multa rescisória FGTS R$')}
+          ${cxMoney(u, 'aviso', '(+) Aviso prévio R$')}
+          ${cxMoney(u, 'assistmedica', '(+) Assistência médica R$')}
+          ${cxMoney(u, 'assistodonto', '(+) Assistência odontológica R$')}
+          ${cxMoney(u, 'valealim', '(+) Vale alimentação R$')}
+          ${cxMoney(u, 'valerefeicao', '(+) Vale refeição R$')}
+          ${cxMoney(u, 'valetransp', '(+) Vale transporte R$')}
+          ${cxMoney(u, 'seguros', '(+) Seguros R$')}
+          ${cxMoney(u, 'pis', '(+) Contribuição do PIS R$')}
+          ${cxMoney(u, 'gratificacoes', '(+) Gratificações R$')}
+          ${cxMoneyEsp(u, 'outras', '(+) Outras despesas de RH')}
+        </td>
+      </tr>
+      <tr class="cx-total"><td colspan="2"><div class="cx-f"><strong>Total/mês [(salário líquido + retenções INSS, IRRF e outros descontos) + encargos e benefícios] × quantidade: R$</strong> <span class="amount" id="${p}-totalmes">R$ 0,00</span></div></td></tr>
+    </tbody></table>
+    <p class="vt-title">Lançamento mensal por função/cargo e rubrica (R$) <span class="vt-alerta no-print">(rubricas são recalculadas automaticamente, confira após alterações)</span></p>
+    ${costTableHTML('rh', p)}
+    <div class="mt-4">
+      <label class="field-label" for="${p}-memoria">Memória de cálculo e justificativa / critério de rateio</label>
       <textarea class="input" id="${p}-memoria" name="${p}-memoria" rows="2"></textarea>
     </div>
   </div>`;
@@ -2918,6 +2993,364 @@ function initCronogramaTable(){
       <div class="month-grid">${monthGridHTMLText('cron-data', 'até dia __')}</div>
     </div>`;
 }
+
+/* ===================== Linhas de lançamento mensal (Seções 8, 9 e 10) ===================== */
+function costRows(card){ return Array.from(card.querySelectorAll('tbody.vt-rows > tr[data-prefix]')); }
+function sumRow(rp, acc){
+  const meses = []; let soma = 0;
+  for(let n = 1; n <= 12; n++){ const v = numMoney(rp + '-mes-' + n); meses.push(v); soma += v; if(acc) acc[n - 1] += v; }
+  return { meses, soma };
+}
+function addCostRow(card, forcedR){
+  const body = card.querySelector('tbody.vt-rows'); if(!body) return null;
+  const type = card.dataset.type, p = type + '-' + card.dataset.uid;
+  const r = forcedR || Number(body.dataset.nextRow || 2);
+  body.insertAdjacentHTML('beforeend', costRowHTML(type, p, r));
+  body.dataset.nextRow = String(Math.max(Number(body.dataset.nextRow || 2), r + 1));
+  const tr = body.lastElementChild;
+  autoResizeAll(tr);
+  calcAll();
+  return tr;
+}
+/* Garante as linhas necessárias ao importar/duplicar (conjunto de números de linha vindos dos campos "rN-…") */
+function ensureRows(card, fields){
+  const set = new Set([1]);
+  Object.keys(fields).forEach(k => { const m = /^r(\d+)-/.exec(k); if(m) set.add(Number(m[1])); });
+  Array.from(set).filter(r => r > 1).sort((a, b) => a - b).forEach(r => { if(!$(card.id + '-r' + r + '-mes-1')) addCostRow(card, r); });
+}
+function rowHasData(tr){
+  return Array.from(tr.querySelectorAll('input[id], select[id], textarea[id]')).some(el => {
+    if(el.type === 'hidden' || el.readOnly || el.disabled || el.hasAttribute('data-row-action')) return false;
+    if(el.classList.contains('money-mask')) return numMoney(el.id) > 0;
+    if(el.tagName === 'SELECT') return el.selectedIndex > 0 && !/-rubrica$/.test(el.id);
+    return String(el.value).trim() !== '';
+  });
+}
+function removeCostRow(card, tr, say){
+  const rows = costRows(card);
+  if(rows.length <= 1){ say('O card precisa ter ao menos uma linha. Para excluir tudo, use “Remover” no topo do card.'); return; }
+  if(rowHasData(tr) && !window.confirm('Remover esta linha de lançamento e os valores dos meses?')) return;
+  const idx = rows.indexOf(tr);
+  tr.remove();
+  calcAll();
+  const alvo = costRows(card)[Math.max(0, idx - 1)];
+  const f = alvo && alvo.querySelector('textarea:not([readonly]), select'); if(f) f.focus();
+  say('Linha removida.');
+}
+function applyRubricaCategoriaRow(rp, key){
+  const r = RUBRICAS_RH.find(x => x.key === key), sel = $(rp + '-categoria');
+  if(!r || !r.cat || !sel || sel.value) return;
+  if(Array.from(sel.options).some(o => o.value === r.cat)) sel.value = r.cat;
+}
+function costRowAction(sel){
+  const act = sel.value; sel.value = '';
+  if(!act) return;
+  const tr = sel.closest('tr'), card = sel.closest('.item-card'); if(!tr || !card) return;
+  const type = card.dataset.type, u = card.dataset.uid, rp = tr.dataset.prefix;
+  const msgEl = card.querySelector('.vt-msg');
+  const say = (t) => { if(msgEl){ msgEl.textContent = t; window.clearTimeout(msgEl._t); msgEl._t = window.setTimeout(() => { msgEl.textContent = ''; }, 7000); } announce(t); };
+  if(act === 'remover'){
+    if(type === 'rh'){ removeCostRow(card, tr, say); return; }
+    if(!cardIsEmpty(card) && !window.confirm('Remover este item de despesa e todos os seus valores?')) return;
+    removeItem(type, card.id); return;
+  }
+  if(act.indexOf('rep') === 0){
+    const x = Number(act.slice(3)), v = numMoney(rp + '-mes-1');
+    if(!(v > 0)){ say('Preencha o valor do Mês 1 antes de repetir.'); return; }
+    for(let n = 2; n <= x; n++){ const inp = $(rp + '-mes-' + n); if(inp) inp.value = numberToMoneyMask(v); }
+    if(type === 'rh'){
+      // só segue automático se o Mês 1 for o próprio valor da rubrica; valor digitado continua manual
+      calcAll();
+      const k = $(rp + '-rubrica').value, auto = Math.round(v * 100) === Math.round(((rhRubricas[u] || {})[k] || 0) * 100);
+      $(rp + '-modo').value = auto ? 'rep' + x + '|' + k : '';
+    }
+    calcAll(); say('Valor do Mês 1 repetido do Mês 2 ao Mês ' + x + '.'); return;
+  }
+  calcAll();
+  let ref = 0, aviso = '', key = '';
+  if(type === 'rh'){
+    key = ($(rp + '-rubrica') || {}).value || '__total';
+    ref = (rhRubricas[u] || {})[key] || 0;
+    aviso = 'A rubrica selecionada está em R$ 0,00 — preencha o salário base/encargos antes de lançar nos meses.';
+  } else if(type === 'impl'){
+    const outras = costRows(card).filter(x => x !== tr).reduce((s, x) => s + sumRow(x.dataset.prefix).soma, 0);
+    ref = Math.round((getRaw('impl-' + u + '-total') - outras) * 100) / 100;
+    aviso = outras > 0 ? 'Todo o custo do item já foi lançado nas outras linhas.' : 'O custo deste item ainda é R$ 0,00 — preencha quantidade e valor unitário antes de lançar nos meses.';
+  } else {
+    ref = getRaw('oper-' + u + '-totalmes');
+    aviso = 'O custo mensal deste item ainda é R$ 0,00 — preencha quantidade e valor unitário antes de lançar nos meses.';
+  }
+  if(!(ref > 0)){ say(aviso); return; }
+  const values = new Array(12).fill(0); let msg = '';
+  if(act === 'mes1'){ values[0] = ref; msg = 'Parcela única de ' + formatBRL(ref) + ' lançada no Mês 1.'; }
+  else {
+    const n = mesesAtivos();
+    if(type === 'impl'){
+      const cents = Math.round(ref * 100), base = Math.floor(cents / n);
+      for(let i = 0; i < n; i++) values[i] = base / 100;
+      values[n - 1] = (cents - base * (n - 1)) / 100;
+      msg = n === 1 ? 'Custo de ' + formatBRL(ref) + ' lançado integralmente no Mês 1.' : 'Custo de ' + formatBRL(ref) + ' dividido em ' + n + ' parcelas iguais (Mês 1 a ' + n + ').';
+    } else {
+      for(let i = 0; i < n; i++) values[i] = ref;
+      msg = formatBRL(ref) + ' lançado em ' + (n === 1 ? 'um mês (Mês 1).' : 'cada um dos ' + n + ' meses do período.');
+    }
+  }
+  writeMonthGrid(rp, values);
+  if(type === 'rh'){ $(rp + '-modo').value = act + '|' + key; applyRubricaCategoriaRow(rp, key); }
+  calcAll(); say(msg);
+}
+document.addEventListener('change', (e) => { if(e.target && e.target.matches && e.target.matches('select[data-row-action]')) costRowAction(e.target); });
+document.addEventListener('click', (e) => {
+  const b = e.target.closest('[data-action="add-row"]'); if(!b) return;
+  const card = $(b.dataset.rowCard); if(!card) return;
+  const tr = addCostRow(card);
+  if(tr){ const f = tr.querySelector('select, textarea:not([readonly])'); if(f) f.focus(); announce('Linha adicionada.'); }
+});
+
+/* ===================== Duplicar card + Importar/Exportar CSV (Seções 8, 9 e 10) ===================== */
+const CSV_MESES = Array.from({length:12}, (_, i) => ({ k:'mes_' + (i + 1), f:'mes-' + (i + 1), kind:'money', al:['mes' + (i + 1), 'mes_0' + (i + 1), 'm' + (i + 1)], ex: i < 3 ? '1.000,00' : '' }));
+const CSV_RH_BENEF = [['indenizacoes','Indenizações'],['multa','Multa rescisória'],['aviso','Aviso prévio'],['assistmedica','Assistência médica'],['assistodonto','Assistência odontológica'],
+  ['valealim','Vale alimentação'],['valerefeicao','Vale refeição'],['valetransp','Vale transporte'],['seguros','Seguros'],['pis','PIS'],['gratificacoes','Gratificações'],['outras','Outras despesas de RH']];
+const CSV_SPECS = {
+  impl: { list:'implantacao-list', add:() => addImplantacao(), rotulo:'Item', nome:'Custo de Implantação', chave:'item', exemplo:'EXEMPLO - apague esta linha',
+    cols:[ { k:'meta', f:'meta', kind:'meta', req:false, d:'número da meta (1, 2, 3…) já cadastrada na Seção de Metas', ex:'1' },
+           { k:'categoria', f:'categoria', kind:'sel', list:'CATEGORIAS_NAO_RH', d:'categoria de despesa (o Grupo é preenchido sozinho)', ex:'Equipamento De Informática' },
+           { k:'descricao', f:'descricao', kind:'text', d:'obrigatória nas categorias “Diversos/Outros”', ex:'' },
+           { k:'item', f:'item', kind:'text', req:true, d:'item de despesa', ex:'EXEMPLO - apague esta linha' },
+           { k:'unidade', f:'unidade', kind:'sel', list:'UNIDADES', d:'unidade de medida', ex:'unidade' },
+           { k:'quantidade', f:'quantidade', kind:'num', d:'quantidade (número)', ex:'10' },
+           { k:'valor_unitario', f:'valorunit', kind:'money', al:['valor_unit','valor_unitario_r','valorunit'], d:'valor unitário em R$', ex:'1.500,00' } ]
+         .concat(CSV_MESES, [ { k:'memoria', f:'memoria', kind:'text', al:['memoria_de_calculo','justificativa'], d:'memória de cálculo / justificativa', ex:'' } ]) },
+  oper: { list:'operacional-list', add:() => addOperacional(), rotulo:'Item', nome:'Custo Operacional', chave:'item', exemplo:'EXEMPLO - apague esta linha',
+    cols:[ { k:'meta', f:'meta', kind:'meta', d:'número da meta (1, 2, 3…) já cadastrada na Seção de Metas', ex:'1' },
+           { k:'categoria', f:'categoria', kind:'sel', list:'CATEGORIAS_NAO_RH', d:'categoria de despesa (o Grupo é preenchido sozinho)', ex:'Material De Expediente/Correio/Fotocópias' },
+           { k:'descricao', f:'descricao', kind:'text', d:'obrigatória nas categorias “Diversos/Outros”', ex:'' },
+           { k:'item', f:'item', kind:'text', req:true, d:'item de despesa', ex:'EXEMPLO - apague esta linha' },
+           { k:'unidade', f:'unidade', kind:'sel', list:'UNIDADES', d:'unidade de medida', ex:'caixa' },
+           { k:'valor_unitario', f:'valorunit', kind:'money', al:['valor_unit','valor_unitario_r','valorunit'], d:'valor unitário em R$', ex:'250,00' },
+           { k:'quantidade_mes', f:'qtdmes', kind:'num', al:['qtd_mes','qtdmes','quantidade_por_mes'], d:'quantidade mensal (número)', ex:'2' } ]
+         .concat(CSV_MESES, [ { k:'memoria', f:'memoria', kind:'text', al:['memoria_de_calculo','justificativa','criterio_de_rateio'], d:'memória de cálculo / critério de rateio', ex:'' } ]) },
+  rh: { list:'rh-list', add:() => addRH(), rotulo:'Função/cargo', nome:'Custo de Recursos Humanos', chave:'funcao', exemplo:'EXEMPLO - apague esta linha',
+    cols:[ { k:'meta', f:'meta', kind:'meta', d:'número da meta (1, 2, 3…) já cadastrada na Seção de Metas', ex:'1' },
+           { k:'funcao', f:'funcao', kind:'text', req:true, al:['funcao_cargo','cargo','funcao_cargo_ch_semanal'], d:'função-cargo / carga horária semanal / especificação', ex:'EXEMPLO - apague esta linha' },
+           { k:'categoria', f:'categoria', kind:'sel', list:'CATEGORIAS_RH', d:'categoria de despesa de RH (o Grupo é preenchido sozinho)', ex:'Salários E Ordenados (Exceto Diretoria)' },
+           { k:'descricao', f:'descricao', kind:'text', d:'obrigatória nas categorias “Outras…”', ex:'' },
+           { k:'vinculo', f:'vinculo', kind:'sel', list:'VINCULOS_SUGESTAO', d:'vínculo (CLT, RPA, Estágio…)', ex:'CLT' },
+           { k:'quantidade', f:'quantidade', kind:'num', d:'quantidade de pessoas (número)', ex:'2' },
+           { k:'salario_base', f:'base', kind:'money', al:['salario_bruto', 'bruto', 'base', 'salario'], d:'salário base em R$ (o bruto soma os adicionais; FGTS, 13º e férias são calculados sozinhos)', ex:'3.000,00' },
+           { k:'horas_extras', f:'horasextras', kind:'money', d:'horas extras em R$ (opcional)', ex:'' },
+           { k:'dsr_horas_extras', f:'dsrhe', kind:'money', d:'DSR s/ horas extras em R$ (opcional)', ex:'' },
+           { k:'adicional_noturno', f:'adnoturno', kind:'money', d:'adicional noturno em R$ (opcional)', ex:'' },
+           { k:'dsr_adicional_noturno', f:'dsrnot', kind:'money', d:'DSR/adicional noturno em R$ (opcional)', ex:'' },
+           { k:'comissoes_gratificacoes', f:'comissoes', kind:'money', d:'comissões, gratificações e prêmios (natureza salarial) em R$ (opcional)', ex:'' },
+           { k:'outros_adicionais', f:'adicoutros', kind:'money', d:'outros adicionais em R$ (opcional)', ex:'' },
+           { k:'inss', f:'inss', kind:'money', d:'INSS retido em R$', ex:'' },
+           { k:'irrf', f:'irrf', kind:'money', d:'IRRF em R$', ex:'' },
+           { k:'outros_descontos', f:'outrosdesc', kind:'money', d:'outros descontos em R$ (opcional)', ex:'' },
+           { k:'salario_familia', f:'salfamilia', kind:'money', al:['salfamilia'], d:'salário família em R$', ex:'' } ]
+         .concat(CSV_RH_BENEF.map(b => ({ k:b[0], f:b[0], kind:'money', d:b[1] + ' em R$ (opcional)', ex:'' })), CSV_MESES) }
+};
+const CSV_LISTAS = { CATEGORIAS_NAO_RH:CATEGORIAS_NAO_RH, CATEGORIAS_RH:CATEGORIAS_RH, UNIDADES:UNIDADES, VINCULOS_SUGESTAO:VINCULOS_SUGESTAO };
+const csvNorm = s => String(s == null ? '' : s).normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().replace(/[^a-z0-9%]+/g, ' ').trim();
+const csvKey = s => csvNorm(s).replace(/ /g, '_');
+
+/* Lê CSV (aspas, aspas duplicadas, quebras de linha entre aspas; separador ; , ou tab detectado no cabeçalho) */
+function parseCSV(text){
+  text = String(text || '').replace(/^﻿/, '');
+  const firstLine = (function(){ let q = false, i = 0; for(; i < text.length; i++){ const c = text[i]; if(c === '"') q = !q; else if((c === '\n' || c === '\r') && !q) break; } return text.slice(0, i); })();
+  const cnt = ch => { let n = 0, q = false; for(const c of firstLine){ if(c === '"') q = !q; else if(c === ch && !q) n++; } return n; };
+  const delim = [';', ',', '\t'].reduce((best, ch) => cnt(ch) > cnt(best) ? ch : best, ';');
+  const rows = []; let row = [], cur = '', q = false;
+  for(let i = 0; i < text.length; i++){
+    const c = text[i];
+    if(q){
+      if(c === '"'){ if(text[i + 1] === '"'){ cur += '"'; i++; } else q = false; } else cur += c;
+    } else if(c === '"'){ q = true; }
+    else if(c === delim){ row.push(cur); cur = ''; }
+    else if(c === '\n' || c === '\r'){ if(c === '\r' && text[i + 1] === '\n') i++; row.push(cur); cur = ''; rows.push(row); row = []; }
+    else cur += c;
+  }
+  if(cur !== '' || row.length){ row.push(cur); rows.push(row); }
+  return rows.filter(r => r.some(c => String(c).trim() !== ''));
+}
+function csvEscape(v, delim){ v = String(v == null ? '' : v); return /["\r\n;,\t]/.test(v) ? '"' + v.replace(/"/g, '""') + '"' : v; }
+function csvMoneyToNumber(s){
+  let t = String(s).replace(/R\$|\s/g, '');
+  if(!t) return null;
+  if(t.indexOf(',') >= 0) t = t.replace(/\./g, '').replace(',', '.');
+  else if(/^\d{1,3}(\.\d{3})+$/.test(t)) t = t.replace(/\./g, '');
+  const n = Number(t);
+  return Number.isFinite(n) && /^-?\d*\.?\d+$/.test(t) ? Math.abs(n) : NaN;
+}
+function csvPlainNumber(s){
+  let t = String(s).replace(/\s/g, '');
+  if(!t) return null;
+  if(t.indexOf(',') >= 0) t = t.replace(/\./g, '').replace(',', '.');
+  else if(/^\d{1,3}(\.\d{3})+$/.test(t)) t = t.replace(/\./g, '');
+  const n = Number(t);
+  return Number.isFinite(n) && /^-?\d*\.?\d+$/.test(t) && n >= 0 ? n : NaN;
+}
+function csvMatchOption(sel, raw){
+  const alvo = csvNorm(raw); if(!alvo) return null;
+  const opts = Array.from(sel.options).filter(o => o.value !== '');
+  let o = opts.find(x => csvNorm(x.value) === alvo || csvNorm(x.textContent) === alvo);
+  if(!o){ const cand = opts.filter(x => csvNorm(x.value).indexOf(alvo) === 0 || alvo.indexOf(csvNorm(x.value)) === 0); if(cand.length === 1) o = cand[0]; }
+  return o ? o.value : null;
+}
+/* Card "vazio" = todos os campos editáveis ainda com o valor inicial (não será sobrescrito se tiver dados) */
+function cardIsEmpty(card){
+  return !Array.from(card.querySelectorAll('input[id], select[id], textarea[id]')).some(el => {
+    if(el.readOnly || el.type === 'hidden' || el.disabled || el.classList.contains('meta-vinculada-select')) return false;
+    if(el.tagName === 'SELECT'){ const d = Array.from(el.options).findIndex(o => o.defaultSelected); return el.selectedIndex !== (d < 0 ? 0 : d); }
+    const n = v => String(v).replace(/^R\$\s*/, '');   // campos calculados exibem "R$ 0,00" em vez de "0,00"
+    return n(el.value) !== n(el.defaultValue);
+  });
+}
+function csvCards(spec){ return Array.from($(spec.list).children).filter(c => c.classList && c.classList.contains('item-card')); }
+function csvStatus(type, tone, html){
+  const el = document.querySelector('[data-csv-status="' + type + '"]'); if(!el) return;
+  el.className = 'csv-status no-print ' + (tone || ''); el.innerHTML = html || '';
+  el.hidden = !html;
+}
+
+function csvTemplate(type){
+  const spec = CSV_SPECS[type]; if(!spec) return;
+  const head = spec.cols.map(c => c.k).join(';');
+  const linha = spec.cols.map(c => csvEscape(c.ex)).join(';');
+  const blob = new Blob(['﻿' + head + '\r\n' + linha + '\r\n'], { type:'text/csv;charset=utf-8' });
+  const a = document.createElement('a'); a.href = URL.createObjectURL(blob);
+  a.download = 'Modelo-CSV_' + (type === 'impl' ? 'Custo_Implantacao' : type === 'rh' ? 'Custo_RH' : 'Custo_Operacional') + '.csv';
+  document.body.appendChild(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(a.href), 2000);
+  csvStatus(type, 'info', 'Modelo baixado. Preencha uma linha por card (a linha de exemplo é ignorada na importação) e use “Importar dados (CSV)”.');
+  announce('Modelo CSV baixado.');
+}
+
+async function csvImport(type, file){
+  const spec = CSV_SPECS[type]; if(!spec || !file) return;
+  csvStatus(type, 'info', 'Lendo o arquivo…');
+  try {
+    if(file.size > 5 * 1024 * 1024) throw new Error('O arquivo tem mais de 5 MB.');
+    const buf = await file.arrayBuffer();
+    let text = new TextDecoder('utf-8').decode(buf);
+    if(text.indexOf('�') >= 0) text = new TextDecoder('windows-1252').decode(buf);   // CSV do Excel em ANSI
+    const rows = parseCSV(text);
+    if(rows.length < 2) throw new Error('O arquivo precisa ter o cabeçalho e ao menos uma linha de dados.');
+    const idx = {};
+    rows[0].forEach((h, i) => {
+      const key = csvKey(h);
+      const col = spec.cols.find(c => c.k === key || (c.al && c.al.indexOf(key) >= 0));
+      if(col && idx[col.k] === undefined) idx[col.k] = i;
+    });
+    if(!Object.keys(idx).length) throw new Error('Cabeçalho não reconhecido. Baixe o “Modelo CSV” e use os mesmos nomes de coluna.');
+    const aviso = [];
+    const chave = spec.cols.find(c => c.k === spec.chave);
+    if(idx[spec.chave] === undefined) aviso.push('Coluna “' + spec.chave + '” (obrigatória no formulário) não encontrada: preencha-a nos cards depois.');
+    const dados = []; let ignoradas = 0;
+    rows.slice(1).forEach((r, n) => {
+      const cel = c => idx[c.k] === undefined ? '' : String(r[idx[c.k]] == null ? '' : r[idx[c.k]]).trim();
+      if(idx[spec.chave] !== undefined && /^exemplo\b/i.test(cel(chave))){ ignoradas++; return; }
+      if(!spec.cols.some(c => cel(c))) return;
+      dados.push({ linha:n + 2, r:r, cel:cel });
+    });
+    if(!dados.length) throw new Error('Nenhuma linha de dados encontrada' + (ignoradas ? ' (somente a linha de exemplo).' : '.'));
+    if(dados.length > 200) throw new Error('O arquivo tem ' + dados.length + ' linhas de dados; o limite é 200 por importação. Divida o arquivo.');
+
+    rebuildMetaSelects();
+    const metas = getMetaList();
+    const vazios = csvCards(spec).filter(cardIsEmpty);
+    let usados = 0, novos = 0;
+    const calcOrig = calcAll; let suspenso = true;
+    calcAll = function(){ if(!suspenso) return calcOrig.apply(this, arguments); };   // recalcula uma única vez no fim (evita lentidão com muitas linhas)
+    try {
+    dados.forEach((d, n) => {
+      let card = vazios[n];
+      if(card) usados++;
+      else { spec.add(); const cs = csvCards(spec); card = cs[cs.length - 1]; novos++; }
+      const u = card.dataset.uid, p = type + '-' + u + '-';
+      spec.cols.forEach(c => {
+        const raw = d.cel(c); if(!raw) return;
+        const el = $(p + c.f); if(!el) return;
+        if(c.kind === 'text'){ el.value = raw; }
+        else if(c.kind === 'money'){ const v = csvMoneyToNumber(raw); if(Number.isNaN(v) || v === null) aviso.push('Linha ' + d.linha + ': valor “' + raw + '” inválido em ' + c.k + ' (mantido 0,00).'); else el.value = numberToMoneyMask(v); }
+        else if(c.kind === 'num'){ const v = csvPlainNumber(raw); if(Number.isNaN(v) || v === null) aviso.push('Linha ' + d.linha + ': número “' + raw + '” inválido em ' + c.k + '.'); else el.value = String(v); }
+        else if(c.kind === 'sel'){ const v = csvMatchOption(el, raw); if(v === null) aviso.push('Linha ' + d.linha + ': “' + raw + '” não reconhecido em ' + c.k + ' (campo deixado em branco).'); else el.value = v; }
+        else if(c.kind === 'meta'){ const m = /\d+/.exec(raw); const alvo = m ? metas[Number(m[0]) - 1] : null; if(!alvo) aviso.push('Linha ' + d.linha + ': meta “' + raw + '” não existe (cadastre as metas antes de importar).'); else el.value = alvo.uid; }
+      });
+    });
+    } finally { suspenso = false; calcAll = calcOrig; }
+    renumberSimple(spec.list, spec.rotulo);
+    rebuildMetaSelects();
+    autoResizeAll($(spec.list));
+    calcAll();
+    const mostra = aviso.slice(0, 10).map(a => '<li>' + esc(a) + '</li>').join('') + (aviso.length > 10 ? '<li>…e mais ' + (aviso.length - 10) + ' aviso(s).</li>' : '');
+    csvStatus(type, aviso.length ? 'warn' : 'ok',
+      '<strong>' + dados.length + ' linha(s) importada(s)</strong> em ' + esc(spec.nome) + ': ' + usados + ' card(s) vazio(s) preenchido(s) e ' + novos + ' novo(s) card(s) criado(s)' + (ignoradas ? '; linha de exemplo ignorada' : '') + '. Cards já preenchidos não foram alterados.' + (aviso.length ? '<ul class="csv-avisos">' + mostra + '</ul>' : ''));
+    announce(dados.length + ' linhas importadas em ' + spec.nome + '.');
+  } catch(err){
+    csvStatus(type, 'err', 'Não foi possível importar: ' + esc(err && err.message ? err.message : 'erro desconhecido') + ' Nenhum card foi alterado.');
+    announce('Falha na importação do CSV.');
+  }
+}
+
+function csvBuildHelp(){
+  Object.keys(CSV_SPECS).forEach(type => {
+    const box = document.querySelector('[data-csv-help="' + type + '"]'); if(!box) return;
+    const spec = CSV_SPECS[type];
+    const listas = type === 'rh' ? ['CATEGORIAS_RH', 'VINCULOS_SUGESTAO'] : ['CATEGORIAS_NAO_RH', 'UNIDADES'];
+    const nomes = { CATEGORIAS_RH:'Categorias de RH', CATEGORIAS_NAO_RH:'Categorias de despesa', UNIDADES:'Unidades', VINCULOS_SUGESTAO:'Vínculos' };
+    box.innerHTML =
+      '<ol class="csv-passos">' +
+        '<li>Clique em <strong>Baixar modelo CSV</strong> e abra no Excel/LibreOffice (separador “;”, UTF-8; vírgula e tabulação também são aceitos).</li>' +
+        '<li>Preencha <strong>uma linha por card</strong>. Apague a linha de exemplo (ela é ignorada se começar com “EXEMPLO”).</li>' +
+        '<li>Salve como <strong>CSV</strong> e clique em <strong>Importar dados (CSV)</strong>. Os cards ainda vazios são preenchidos primeiro; se houver mais linhas, novos cards são criados. <strong>Cards já preenchidos nunca são alterados.</strong></li>' +
+        '<li>Valores em R$ aceitam <code>1.234,56</code>, <code>1234,56</code> ou <code>1234.56</code>. Células em branco ficam com o valor padrão. Meses em branco ficam 0,00: use os botões de lançamento mensal do card.</li>' +
+        '<li>Metas: informe o <strong>número</strong> da meta (1, 2…), que já deve estar cadastrada.</li>' +
+      '</ol>' +
+      '<p class="csv-colh">Colunas do arquivo (nesta ordem):</p>' +
+      '<ul class="csv-cols">' + spec.cols.filter(c => !/^mes_([2-9]|1[0-2])$/.test(c.k)).map(c => '<li><code>' + esc(c.k === 'mes_1' ? 'mes_1 … mes_12' : c.k) + '</code>' + (c.req ? ' <em>(principal)</em>' : '') + ' — ' + esc(c.k === 'mes_1' ? 'valor em R$ lançado em cada mês' : c.d) + '</li>').join('') + '</ul>' +
+      listas.map(l => '<details class="csv-lista"><summary>Valores aceitos: ' + nomes[l] + '</summary><p>' + CSV_LISTAS[l].map(esc).join(' · ') + '</p></details>').join('');
+  });
+}
+
+/* Duplicar card preenchido: cria um novo card logo abaixo com os mesmos dados */
+const DUP_ADD = { impl: () => addImplantacao(), oper: () => addOperacional(), rh: () => addRH() };
+const DUP_LIST = { impl:['implantacao-list', 'Item'], oper:['operacional-list', 'Item'], rh:['rh-list', 'Função/cargo'] };
+function duplicateItem(type, targetId){
+  const src = $(targetId), add = DUP_ADD[type]; if(!src || !add) return;
+  const pre = targetId + '-', vals = {};
+  src.querySelectorAll('input[id], select[id], textarea[id]').forEach(el => { if(el.id.indexOf(pre) === 0 && !isTransientField(el)) vals[el.id.slice(pre.length)] = el.value; });
+  add();
+  const cards = Array.from($(DUP_LIST[type][0]).children).filter(c => c.classList && c.classList.contains('item-card'));
+  const nc = cards[cards.length - 1]; if(!nc || nc === src) return;
+  src.after(nc);
+  const np = nc.id + '-';
+  ensureRows(nc, vals);
+  Object.keys(vals).forEach(k => setFieldValue(np + k, vals[k]));
+  renumberSimple(DUP_LIST[type][0], DUP_LIST[type][1]);
+  rebuildMetaSelects();
+  if(vals.meta !== undefined) setFieldValue(np + 'meta', vals.meta);
+  autoResizeAll(nc);
+  calcAll();
+  nc.classList.add('card-dup-flash'); window.setTimeout(() => nc.classList.remove('card-dup-flash'), 2200);
+  try { nc.scrollIntoView({ block:'nearest', behavior:'smooth' }); } catch(e){}
+  const f = $(np + (type === 'rh' ? 'funcao' : 'item')); if(f) f.focus({ preventScroll:true });
+  announce('Card duplicado. Revise os dados do novo card.');
+}
+
+document.addEventListener('click', (e) => {
+  const dup = e.target.closest('[data-action="duplicate"]');
+  if(dup){ duplicateItem(dup.dataset.dupType, dup.dataset.dupTarget); return; }
+  const b = e.target.closest('[data-csv-action]'); if(!b) return;
+  const type = b.dataset.csvType;
+  if(b.dataset.csvAction === 'template') csvTemplate(type);
+  else if(b.dataset.csvAction === 'import'){ const inp = document.querySelector('[data-csv-file="' + type + '"]'); if(inp) inp.click(); }
+});
+document.addEventListener('change', (e) => {
+  const inp = e.target.closest && e.target.closest('[data-csv-file]'); if(!inp) return;
+  const f = inp.files && inp.files[0]; const type = inp.dataset.csvFile; inp.value = '';
+  if(f) csvImport(type, f);
+});
+document.addEventListener('DOMContentLoaded', csvBuildHelp);
 
 /* ===================== Add / remove / renumber ===================== */
 function renumberSimple(containerId, labelPrefix){
@@ -3095,7 +3528,7 @@ function calcAll(){
     const sel = $(h.dataset.catHintFor);
     const cat = sel ? sel.value : '';
     const txt = (cat && isGenericCategoria(cat))
-      ? 'Categoria genérica ("Diversos/Outros"): preencha a coluna Descrição — ela é exportada na coluna Descrição do CSV Audesp.' : '';
+      ? 'Categoria genérica: preencha a Descrição (vai para o CSV Audesp).' : '';
     h.textContent = txt;
     h.hidden = !txt;
   });
@@ -3105,27 +3538,17 @@ function calcAll(){
   lastImplItems = [];
   document.querySelectorAll('#implantacao-list .item-card').forEach(card => {
     const u = card.dataset.uid;
-    const qtd = num('impl-' + u + '-quantidade');
-    const valor = numMoney('impl-' + u + '-valorunit');
-    const total = qtd * valor;
+    const total = num('impl-' + u + '-quantidade') * numMoney('impl-' + u + '-valorunit');
     setMoney('impl-' + u + '-total', total);
     let somaCard = 0;
-    lancRows(card).forEach(row => {
-      const pf = row.dataset.pf;
-      let sumMeses = 0;
-      const meses = [];
-      for(let n=1;n<=12;n++){
-        const mv = numMoney(pf + '-mes-' + n);
-        meses.push(mv);
-        sumMeses += mv;
-        implMonthSums[n-1] += mv;
-      }
-      setMoney(pf + '-totalvig', sumMeses);
-      somaCard += sumMeses;
-      implGrandTotal += sumMeses;
-      lastImplItems.push({ grupo: val(pf + '-grupo'), categoria: val(pf + '-categoria'), descricao: val(pf + '-descricao'), meses: meses });
+    costRows(card).forEach(tr => {
+      const rp = tr.dataset.prefix, r = sumRow(rp, implMonthSums);
+      setMoney(rp + '-totalvig', r.soma);
+      somaCard += r.soma;
+      lastImplItems.push({ grupo: val(rp + '-grupo'), categoria: val(rp + '-categoria'), descricao: val(rp + '-descricao'), meses: r.meses });
     });
     updateFillStatus('impl-' + u, total, somaCard);
+    implGrandTotal += somaCard;
   });
   for(let n=1;n<=12;n++) setMoney('impl-total-mes-' + n, implMonthSums[n-1]);
   setMoney('impl-total-total', implGrandTotal);
@@ -3139,23 +3562,12 @@ function calcAll(){
   lastOperItems = [];
   document.querySelectorAll('#operacional-list .item-card').forEach(card => {
     const u = card.dataset.uid;
-    const valor = numMoney('oper-' + u + '-valorunit');
-    const qtdMes = num('oper-' + u + '-qtdmes');
-    const totalMes = valor * qtdMes;
-    setMoney('oper-' + u + '-totalmes', totalMes);
-    lancRows(card).forEach(row => {
-      const pf = row.dataset.pf;
-      let sumMeses = 0;
-      const meses = [];
-      for(let n=1;n<=12;n++){
-        const mv = numMoney(pf + '-mes-' + n);
-        meses.push(mv);
-        sumMeses += mv;
-        operMonthSums[n-1] += mv;
-      }
-      setMoney(pf + '-totalvig', sumMeses);
-      operGrandTotal += sumMeses;
-      lastOperItems.push({ grupo: val(pf + '-grupo'), categoria: val(pf + '-categoria'), descricao: val(pf + '-descricao'), meses: meses });
+    setMoney('oper-' + u + '-totalmes', numMoney('oper-' + u + '-valorunit') * num('oper-' + u + '-qtdmes'));
+    costRows(card).forEach(tr => {
+      const rp = tr.dataset.prefix, r = sumRow(rp, operMonthSums);
+      setMoney(rp + '-totalvig', r.soma);
+      operGrandTotal += r.soma;
+      lastOperItems.push({ grupo: val(rp + '-grupo'), categoria: val(rp + '-categoria'), descricao: val(rp + '-descricao'), meses: r.meses });
     });
   });
   for(let n=1;n<=12;n++) setMoney('oper-total-mes-' + n, operMonthSums[n-1]);
@@ -3172,72 +3584,58 @@ function calcAll(){
   document.querySelectorAll('#rh-list .item-card').forEach(card => {
     const u = card.dataset.uid;
     const g = (key) => numMoney('rh-' + u + '-' + key);
-    // Salário bruto = salário base + adicionais (horas extras, adicional noturno, outros adicionais, DSR, comissões…)
-    const bruto = g('sbase') + g('he') + g('dsr') + g('adnot') + g('dsrnot') + g('comissoes') + g('outroadic');
+    // Salário bruto = base + adicionais; líquido = bruto − INSS − IRRF − outros descontos + salário família
+    const bruto = g('base') + g('horasextras') + g('dsrhe') + g('adnoturno') + g('dsrnot') + g('comissoes') + g('adicoutros');
     setMoney('rh-' + u + '-bruto', bruto);
     const inss = g('inss'), irrf = g('irrf'), outrosDesc = g('outrosdesc'), salFamilia = g('salfamilia');
     const liquido = bruto - inss - irrf - outrosDesc + salFamilia;
     setMoney('rh-' + u + '-liquido', liquido);
     const fgts = encargoValue('rh-' + u + '-fgts', bruto * 0.08);
     const inssPatronal = g('insspatronal');
-    const decimo = encargoValue('rh-' + u + '-decimo', liquido / 12);
-    const inss13 = encargoValue('rh-' + u + '-inss13', inss / 12);
+    const decimo = encargoValue('rh-' + u + '-decimo', bruto / 12);                    // 13º: 1/12 do salário BRUTO
+    const inss13 = encargoValue('rh-' + u + '-inss13', inssPatronal / 12);             // reflexo patronal: 1/12 do INSS patronal
     const fgts13 = encargoValue('rh-' + u + '-fgts13', (bruto / 12) * 0.08);
-    const feriasTerco = encargoValue('rh-' + u + '-feriasterco', liquido / 36); // 1/3 de 1/12 do líquido
+    const feriasTerco = encargoValue('rh-' + u + '-feriasterco', bruto / 36);          // 1/3 de 1/12 do salário BRUTO
     // FGTS só sobre o 1/3 de férias provisionado (Férias 1/12 não é lançada): 1/3 de 1/12 do FGTS mensal
     const fgtsFerias = encargoValue('rh-' + u + '-fgtsferias', fgts / 36);
-    const inssFerias = g('inssferias');
-    const irrfFerias = g('irrfferias');
-    const encOutros = g('encoutros');
+    const inssFerias = g('inssferias'), irrfFerias = g('irrfferias'), encOutros = g('encoutros');
     const indenizacoes = g('indenizacoes'), multa = g('multa'), aviso = g('aviso'),
           assistMedica = g('assistmedica'), assistOdonto = g('assistodonto'),
           valeAlim = g('valealim'), valeRef = g('valerefeicao'), valeTransp = g('valetransp'),
           seguros = g('seguros'), pis = g('pis'), gratificacoes = g('gratificacoes'), outras = g('outras');
     const quantidade = num('rh-' + u + '-quantidade') || 0;
-    const somaComponentes = liquido + inss + irrf + outrosDesc + encOutros + fgts + inssPatronal + decimo + inss13 + fgts13 + feriasTerco +
-      fgtsFerias + inssFerias + irrfFerias + indenizacoes + multa + aviso + assistMedica + assistOdonto +
+    // Custo da entidade = líquido + retenções (INSS, IRRF e outros descontos, que ela recolhe) + encargos + benefícios.
+    // (Antes as retenções ficavam fora do total e 13º/férias eram calculados sobre o líquido.)
+    const somaComponentes = liquido + inss + irrf + outrosDesc + fgts + inssPatronal + decimo + inss13 + fgts13 + feriasTerco +
+      fgtsFerias + inssFerias + irrfFerias + encOutros + indenizacoes + multa + aviso + assistMedica + assistOdonto +
       valeAlim + valeRef + valeTransp + seguros + pis + gratificacoes + outras;
     const totalMes = somaComponentes * quantidade;
     setMoney('rh-' + u + '-totalmes', totalMes);
 
-    // Valor mensal de cada rubrica (× quantidade): alimenta o seletor "Rubrica a lançar nos meses"
-    const rubBase = { liquido, inss, irrf, outrosdesc:outrosDesc, encoutros:encOutros, fgts, insspatronal:inssPatronal, decimo, inss13, fgts13, feriasterco:feriasTerco,
-      fgtsferias:fgtsFerias, inssferias:inssFerias, irrfferias:irrfFerias, indenizacoes, multa, aviso,
+    // Valor mensal de cada rubrica (× quantidade): alimenta o seletor "Rubrica" de cada linha
+    const rubBase = { liquido, inss, irrf, outrosdesc:outrosDesc, fgts, insspatronal:inssPatronal, decimo, inss13, fgts13, feriasterco:feriasTerco,
+      fgtsferias:fgtsFerias, inssferias:inssFerias, irrfferias:irrfFerias, encoutros:encOutros, indenizacoes, multa, aviso,
       assistmedica:assistMedica, assistodonto:assistOdonto, valealim:valeAlim, valerefeicao:valeRef,
       valetransp:valeTransp, seguros, pis, gratificacoes, outras };
     const rub = { __total: totalMes };
     RUBRICAS_RH.forEach(r => { if(r.key !== '__total') rub[r.key] = (rubBase[r.key] || 0) * quantidade; });
     rhRubricas[u] = rub;
-    // Um bloco de lançamento por rubrica (o primeiro tem os ids originais; os demais, o prefixo rh-<uid>-r<k>-)
-    const blocos = lancRows(card);
-    const selects = blocos.map(b => $(b.dataset.pf + '-rubrica'));
-    const usadas = selects.map(s => s ? s.value : '');
-    blocos.forEach((b, bi) => {
-      const pf = b.dataset.pf, sel = selects[bi];
-      if(sel) Array.from(sel.options).forEach(o => {
+    const topo = $('rh-' + u + '-funcao');
+    costRows(card).forEach(tr => {
+      const rp = tr.dataset.prefix;
+      const rubSel = $(rp + '-rubrica');
+      if(rubSel) Array.from(rubSel.options).forEach(o => {
         const r = RUBRICAS_RH.find(x => x.key === o.value);
         if(r) o.textContent = r.label + ' — ' + formatBRL(rub[r.key] || 0);
-        // uma rubrica só pode ser escolhida uma vez por função/cargo; "Total do cargo" não convive com rubricas individuais
-        const repetida = usadas.some((v, j) => j !== bi && v === o.value);
-        o.disabled = (repetida || (o.value === '__total' && blocos.length > 1)) && o.value !== sel.value;
       });
-      let sumMeses = 0;
-      const meses = [];
-      for(let n=1;n<=12;n++){
-        const mv = numMoney(pf + '-mes-' + n);
-        meses.push(mv);
-        sumMeses += mv;
-        rhMonthSums[n-1] += mv;
-      }
-      setMoney(pf + '-totalvig', sumMeses);
-      rhGrandTotal += sumMeses;
-      lastRhItems.push({ grupo: val(pf + '-grupo'), categoria: val(pf + '-categoria'), descricao: val(pf + '-descricao'), meses: meses });
+      const fl = $(rp + '-funcaolinha');
+      if(fl && topo && fl.value !== topo.value){ fl.value = topo.value; autoResizeTextarea(fl); }
+      aplicarRubricaAutomatica(rp, rub);
+      const r = sumRow(rp, rhMonthSums);
+      setMoney(rp + '-totalvig', r.soma);
+      rhGrandTotal += r.soma;
+      lastRhItems.push({ grupo: val(rp + '-grupo'), categoria: val(rp + '-categoria'), descricao: val(rp + '-descricao'), meses: r.meses });
     });
-    const avisoEl = $('rh-' + u + '-rubaviso');
-    if(avisoEl){
-      const conflito = blocos.length > 1 && usadas.indexOf('__total') > -1;
-      avisoEl.textContent = conflito ? 'Atenção: "Total do cargo" já reúne todas as rubricas. Com mais de uma linha, escolha rubricas individuais em cada uma para não lançar valores em duplicidade.' : '';
-    }
   });
   for(let n=1;n<=12;n++) setMoney('rh-total-mes-' + n, rhMonthSums[n-1]);
   setMoney('rh-total-total', rhGrandTotal);
@@ -3363,6 +3761,59 @@ function calcAll(){
   if(typeof docRefreshSoon === 'function') docRefreshSoon();   // documentos anexos seguem os dados do plano
 }
 
+/* Seção 9: linhas lançadas pela "Ação" acompanham o card. O campo oculto "-modo" guarda "ação|rubrica"
+   (todo, mes1 ou repN); vazio = linha manual, nunca sobrescrita. */
+function valoresDoModo(acao, valor){
+  const n = acao === 'todo' ? mesesAtivos() : acao === 'mes1' ? 1 : Number(acao.slice(3));
+  return Array.from({length:12}, (_, i) => i < n ? valor : 0);
+}
+function aplicarRubricaAutomatica(rp, rub){
+  const modo = $(rp + '-modo'), sel = $(rp + '-rubrica');
+  if(!modo || !sel) return;
+  const [acao, antiga] = modo.value.split('|'), key = sel.value;
+  if(acao){
+    writeMonthGrid(rp, valoresDoModo(acao, Math.max(0, Math.round((rub[key] || 0) * 100) / 100)));
+    if(antiga && antiga !== key){
+      // troca de rubrica: atualiza a categoria apenas se ela era a sugerida pela rubrica anterior (ou estava vazia)
+      const cat = $(rp + '-categoria'), de = RUBRICAS_RH.find(x => x.key === antiga), para = RUBRICAS_RH.find(x => x.key === key);
+      if(cat && para && (!cat.value || (de && cat.value === de.cat))){
+        cat.value = para.cat;
+        const g = $(rp + '-grupo'); if(g) g.value = CATEGORIA_GRUPO_MAP[para.cat] || '';
+      }
+    }
+    modo.value = acao + '|' + key;
+  }
+  const info = $(rp + '-modoinfo');
+  if(info){
+    const temValor = sumRow(rp).soma > 0;
+    info.textContent = acao ? '↻ automático' : temValor ? '✎ manual (não recalcula)' : '';
+    info.classList.toggle('manual', !acao);
+  }
+}
+/* Digitar em um mês torna a linha manual (captura: roda antes do recálculo do formulário). */
+document.addEventListener('input', e => {
+  const m = e.target && e.target.id && /^(rh-\d+(?:-r\d+)?)-mes-\d+$/.exec(e.target.id);
+  if(m && $(m[1] + '-modo')) $(m[1] + '-modo').value = '';
+}, true);
+/* Arquivos anteriores à v8.2 não têm "-modo": a linha volta a ser automática somente quando os meses
+   coincidem exatamente com o valor atual da rubrica (Meses 1 a N iguais, demais zerados). */
+function inferirModosRH(campos){
+  let mudou = false;
+  document.querySelectorAll('#rh-list .item-card').forEach(card => {
+    const u = card.dataset.uid;
+    costRows(card).forEach(tr => {
+      const rp = tr.dataset.prefix, modo = $(rp + '-modo'), key = $(rp + '-rubrica').value;
+      const alvo = Math.round(((rhRubricas[u] || {})[key] || 0) * 100);
+      if(!modo || modo.value || !(alvo > 0)) return;
+      const c = sumRow(rp).meses.map(v => Math.round(v * 100));
+      let n = 0; while(n < 12 && c[n] === alvo) n++;
+      if(!n || c.slice(n).some(v => v !== 0)) return;
+      modo.value = (n === mesesAtivos() ? 'todo' : n === 1 ? 'mes1' : 'rep' + n) + '|' + key;
+      mudou = true;
+    });
+  });
+  if(mudou) calcAll();
+}
 function updateProgress(){
   const required = Array.from(document.querySelectorAll('#plano-form [required]'));
   let filled = 0;
@@ -3386,9 +3837,9 @@ function mesesAtivos(){
 // Valor de referência do botão: total do item (Seções 8/10), ou a rubrica escolhida no cartão de RH.
 function fillReference(btn){
   if(btn.dataset.costKind === 'rubrica'){
-    const u = btn.dataset.rhUid, sel = $(btn.dataset.rubSel || ('rh-' + u + '-rubrica'));
+    const u = btn.dataset.rhUid, sel = $('rh-' + u + '-rubrica');
     const key = (sel && sel.value) ? sel.value : '__total';
-    return { value: (rhRubricas[u] || {})[key] || 0, rubrica: key, uid: u, pf: btn.dataset.monthPrefix || ('rh-' + u) };
+    return { value: (rhRubricas[u] || {})[key] || 0, rubrica: key, uid: u };
   }
   return { value: getRaw(btn.dataset.totalField), rubrica: '', uid: '' };
 }
@@ -3401,399 +3852,24 @@ function writeMonthGrid(prefix, values){
   }
 }
 // Cartão de RH ainda sem categoria: sugere a categoria AUDESP da rubrica copiada (não sobrescreve).
-function applyRubricaCategoria(pf, key){
+function applyRubricaCategoria(u, key){
   const r = RUBRICAS_RH.find(x => x.key === key);
-  const sel = $(pf + '-categoria');
+  const sel = $('rh-' + u + '-categoria');
   if(!r || !r.cat || !sel || sel.value) return;
   if(Array.from(sel.options).some(o => o.value === r.cat)) sel.value = r.cat;
 }
-// Repete o valor do Mês 1 (o que estiver nele agora) do Mês 2 até o Mês "ate" (padrão 12).
-function fillRepeat(prefix, ate, el){
-  const first = $(prefix + '-mes-1');
-  if(!first) return;
-  ate = (ate >= 2 && ate <= 12) ? ate : 12;
-  const isMoney = first.classList.contains('money-mask');
-  const v = isMoney ? numMoney(prefix + '-mes-1') : first.value;
-  for(let n=2;n<=ate;n++){
-    const inp = $(prefix + '-mes-' + n);
-    if(!inp) continue;
-    inp.value = isMoney ? numberToMoneyMask(v) : v;
-  }
-  calcAll();
-  const msg = ate === 12 ? 'Valor do Mês 1 repetido nos Meses 2 a 12.' : 'Valor do Mês 1 repetido do Mês 2 ao Mês ' + ate + '.';
-  vtFlash(el, msg);
-  announce(msg);
-}
-// "copy-cost" (custo lançado distribuído pelos meses do período), "first" (parcela única no Mês 1) e "repeat" (legado).
-// "btn" é o botão ou o select "Ação" (mesmos data-attributes: month-prefix, cost-kind, total-field, rh-uid, rub-sel).
-function fillCost(btn, mode){
-  const prefix = btn.dataset.monthPrefix;
-    const kind = btn.dataset.costKind || '';
-    if(kind === 'rubrica') calcAll();               // garante as rubricas atualizadas antes de ler
-    const ref = fillReference(btn);
-    if(kind && !(ref.value > 0)){
-      const aviso = kind === 'rubrica'
-        ? 'A rubrica selecionada está em R$ 0,00 — preencha o salário bruto/encargos antes de lançar nos meses.'
-        : 'O custo deste item ainda é R$ 0,00 — preencha quantidade e valor unitário antes de lançar nos meses.';
-      vtFlash(btn, aviso);
-      announce(aviso);
-      return;
-    }
-    const values = new Array(12).fill(0);
-    let msg = '';
-    if(mode === 'copy-cost'){
-      const n = mesesAtivos();
-      if(kind === 'total'){
-        // custo único: divide em parcelas iguais; o resíduo de centavos vai para o último mês do período
-        const cents = Math.round(ref.value * 100), base = Math.floor(cents / n);
-        for(let i=0;i<n;i++) values[i] = base / 100;
-        values[n-1] = (cents - base * (n-1)) / 100;
-        msg = n === 1
-          ? 'Custo de ' + formatBRL(ref.value) + ' lançado integralmente no Mês 1.'
-          : 'Custo de ' + formatBRL(ref.value) + ' dividido em ' + n + ' parcelas iguais (Mês 1 a ' + n + ').';
-      } else {
-        for(let i=0;i<n;i++) values[i] = ref.value;
-        msg = formatBRL(ref.value) + ' lançado em ' + (n === 1 ? 'um mês (Mês 1).' : 'cada um dos ' + n + ' meses do período.');
-      }
-    } else if(mode === 'first'){
-      values[0] = ref.value;
-      msg = 'Parcela única de ' + formatBRL(ref.value) + ' lançada no Mês 1.';
-    } else {
-      values.fill(ref.value);
-    }
-    writeMonthGrid(prefix, values);
-    if(ref.rubrica) applyRubricaCategoria(ref.pf, ref.rubrica);
-    calcAll();
-    if(msg){ vtFlash(btn, msg); announce(msg); }
-    return;
-}
 // Mensagem visível ao lado dos botões (some sozinha).
 function vtFlash(btn, text){
-  const row = btn.closest('.lanc-row');
   const box = btn.closest('.vt-actions');
-  let el = (row && row.querySelector('.lanc-msg')) || (box && box.querySelector('.vt-msg'));
-  if(!el){ const card = btn.closest('.item-card'); el = card && card.querySelector('.rh-fillmsg'); }
+  const el = box && box.querySelector('.vt-msg');
   if(!el) return;
   el.textContent = text;
   window.clearTimeout(el._t);
   el._t = window.setTimeout(() => { el.textContent = ''; }, 7000);
 }
 
-
-/* ===================== Duplicar card e importar CSV (Seções 8, 9 e 10) =====================
-   Uma única definição de colunas (CSV_SPECS) alimenta o modelo CSV exportado, a orientação na tela e o importador. */
-const CSV_MESES = Array.from({length:12}, (_, i) => ({ k:'mes_' + (i+1), f:'mes-' + (i+1), t:'money', d:'Lançamento do Mês ' + (i+1) + ' em R$ (opcional)' }));
-const CSV_META = { k:'meta_vinculada', f:'meta', t:'meta', d:'Meta vinculada: "Meta 1", "Meta 2"… ou só o número (1, 2…), conforme a ordem das metas da Seção 5' };
-const CSV_SPECS = {
-  impl: { container:'implantacao-list', badge:'Item', titulo:'Custo_Implantação', arquivo:'modelo_importacao_custo_implantacao.csv', build:buildImplantacaoCard, categorias:CATEGORIAS_NAO_RH,
-    cols:[ CSV_META,
-      { k:'unidade', f:'unidade', t:'sel', opts:UNIDADES, d:'Unidade de medida (lista abaixo)' },
-      { k:'quantidade', f:'quantidade', t:'num', d:'Quantidade (número; ex.: 2 ou 1,5)' },
-      { k:'valor_unitario', f:'valorunit', t:'money', d:'Valor unitário em R$ (ex.: 3.500,00)' },
-      { k:'categoria', f:'categoria', t:'cat', d:'Categoria de despesas (nome exato da lista abaixo; o Grupo é preenchido sozinho)' },
-      { k:'descricao', f:'descricao', t:'txt', d:'Descrição (obrigatória nas categorias "Diversos"/"Outros")' },
-      { k:'item_despesa', f:'item', t:'txt', d:'Item de despesa' } ].concat(CSV_MESES, [
-      { k:'memoria_calculo', f:'memoria', t:'txt', d:'Memória de cálculo / justificativa da necessidade' } ]),
-    exemplos:[
-      { meta_vinculada:'Meta 1', unidade:'unidade', quantidade:'2', valor_unitario:'3.500,00', categoria:'Bens E Equipamentos De Informática', item_despesa:'Notebook para a equipe técnica', mes_1:'7.000,00', memoria_calculo:'Cotação nº 1 (3 propostas anexas)' },
-      { meta_vinculada:'Meta 1', unidade:'unidade', quantidade:'1', valor_unitario:'1.200,00', categoria:'Outros Bens E Materiais Permanentes', item_despesa:'Impressora multifuncional', mes_1:'1.200,00' } ] },
-  oper: { container:'operacional-list', badge:'Item', titulo:'Custo_Operacional', arquivo:'modelo_importacao_custo_operacional.csv', build:buildOperacionalCard, categorias:CATEGORIAS_NAO_RH,
-    cols:[ CSV_META,
-      { k:'unidade', f:'unidade', t:'sel', opts:UNIDADES, d:'Unidade de medida (lista abaixo)' },
-      { k:'valor_unitario', f:'valorunit', t:'money', d:'Valor unitário em R$ (ex.: 450,00)' },
-      { k:'quantidade_mes', f:'qtdmes', t:'num', d:'Quantidade por mês (número)' },
-      { k:'categoria', f:'categoria', t:'cat', d:'Categoria de despesas (nome exato da lista abaixo; o Grupo é preenchido sozinho)' },
-      { k:'descricao', f:'descricao', t:'txt', d:'Descrição (obrigatória nas categorias "Diversos"/"Outros")' },
-      { k:'item_despesa', f:'item', t:'txt', d:'Item de despesa' } ].concat(CSV_MESES, [
-      { k:'memoria_calculo', f:'memoria', t:'txt', d:'Memória de cálculo / justificativa / critério de rateio' } ]),
-    exemplos:[
-      { meta_vinculada:'Meta 1', unidade:'mês', valor_unitario:'450,00', quantidade_mes:'1', categoria:'Água E Esgoto', item_despesa:'Conta de água e esgoto', memoria_calculo:'Média das últimas 12 faturas',
-        mes_1:'450,00', mes_2:'450,00', mes_3:'450,00', mes_4:'450,00', mes_5:'450,00', mes_6:'450,00', mes_7:'450,00', mes_8:'450,00', mes_9:'450,00', mes_10:'450,00', mes_11:'450,00', mes_12:'450,00' },
-      { meta_vinculada:'Meta 1', unidade:'mês', valor_unitario:'150,00', quantidade_mes:'1', categoria:'Internet/ Tv A Cabo', item_despesa:'Internet banda larga' } ] },
-  rh: { container:'rh-list', badge:'Função/cargo', titulo:'Custo_RH', arquivo:'modelo_importacao_custo_rh.csv', build:buildRHCard, categorias:CATEGORIAS_RH,
-    cols:[ CSV_META,
-      { k:'quantidade', f:'quantidade', t:'num', d:'Quantidade de profissionais (número inteiro; se vazio, mantém 1)' },
-      { k:'vinculo', f:'vinculo', t:'sel', opts:VINCULOS_SUGESTAO, d:'Vínculo (lista abaixo)' },
-      { k:'salario_base', f:'sbase', t:'money', d:'Salário base em R$ — Salário base + adicionais = salário bruto (calculado); FGTS, 13º e férias (1/3) partem dele' },
-      { k:'salario_bruto', f:'sbase', t:'money', d:'Sinônimo de salario_base, aceito para arquivos antigos (use uma das duas colunas)' },
-      { k:'horas_extras', f:'he', t:'money', d:'Horas extras em R$' },
-      { k:'adicional_noturno', f:'adnot', t:'money', d:'Adicional noturno em R$' },
-      { k:'outros_adicionais', f:'outroadic', t:'money', d:'Outros adicionais em R$ (especifique na coluna seguinte)' },
-      { k:'outros_adicionais_especificar', f:'outroadicesp', t:'txt', d:'Especificação dos outros adicionais (ex.: insalubridade)' },
-      { k:'dsr', f:'dsr', t:'money', d:'DSR s/Horas Extras em R$' },
-      { k:'dsr_adicional_noturno', f:'dsrnot', t:'money', d:'DSR/Adicional noturno em R$' },
-      { k:'comissoes_premios', f:'comissoes', t:'money', d:'Comissões, gratificações e prêmios/bônus em R$ (quando tiverem natureza salarial)' },
-      { k:'inss', f:'inss', t:'money', d:'INSS retido em R$' },
-      { k:'irrf', f:'irrf', t:'money', d:'IRRF em R$' },
-      { k:'outros_descontos', f:'outrosdesc', t:'money', d:'Outros descontos em R$' },
-      { k:'salario_familia', f:'salfamilia', t:'money', d:'Salário família em R$' },
-      { k:'inss_patronal', f:'insspatronal', t:'money', d:'Contribuição INSS patronal em R$' },
-      { k:'inss_ferias', f:'inssferias', t:'money', d:'INSS s/férias (1/3) em R$' },
-      { k:'irrf_ferias', f:'irrfferias', t:'money', d:'IRRF s/férias (1/3) em R$' },
-      { k:'outros_encargos', f:'encoutros', t:'money', d:'Outros encargos e provisões em R$ (especifique na coluna seguinte)' },
-      { k:'outros_encargos_especificar', f:'encoutrosesp', t:'txt', d:'Especificação dos outros encargos' },
-      { k:'indenizacoes', f:'indenizacoes', t:'money', d:'Indenizações em R$' },
-      { k:'multa_fgts', f:'multa', t:'money', d:'Multa rescisória FGTS em R$' },
-      { k:'aviso_previo', f:'aviso', t:'money', d:'Aviso prévio em R$' },
-      { k:'assistencia_medica', f:'assistmedica', t:'money', d:'Assistência médica em R$' },
-      { k:'assistencia_odonto', f:'assistodonto', t:'money', d:'Assistência odontológica em R$' },
-      { k:'vale_alimentacao', f:'valealim', t:'money', d:'Vale alimentação em R$' },
-      { k:'vale_refeicao', f:'valerefeicao', t:'money', d:'Vale refeição em R$' },
-      { k:'vale_transporte', f:'valetransp', t:'money', d:'Vale transporte em R$' },
-      { k:'seguros', f:'seguros', t:'money', d:'Seguros em R$' },
-      { k:'pis', f:'pis', t:'money', d:'Contribuição do PIS em R$' },
-      { k:'gratificacoes', f:'gratificacoes', t:'money', d:'Gratificações em R$' },
-      { k:'outras_despesas', f:'outras', t:'money', d:'Outras despesas de RH em R$' },
-      { k:'outras_despesas_especificar', f:'outrasesp', t:'txt', d:'Especificação das outras despesas de RH' },
-      { k:'categoria', f:'categoria', t:'cat', d:'Categoria de despesas (nome exato da lista abaixo; o Grupo é preenchido sozinho)' },
-      { k:'descricao', f:'descricao', t:'txt', d:'Descrição (se Diversos/Outros)' },
-      { k:'funcao_cargo', f:'funcao', t:'txt', d:'Função-cargo / carga horária semanal / especificação' },
-      { k:'rubrica', f:'rubrica', t:'rub', d:'Rubrica do menu de lançamento da 1ª tabela (lista abaixo); rubricas adicionais são incluídas no formulário' } ].concat(CSV_MESES, [
-      { k:'memoria_calculo', f:'memoria', t:'txt', d:'Memória de cálculo e justificativa / critério de rateio' } ]),
-    exemplos:[
-      { meta_vinculada:'Meta 1', quantidade:'1', vinculo:'CLT', salario_base:'2.800,00', horas_extras:'200,00', inss:'270,00', categoria:'Salários E Ordenados (Exceto Diretoria)', funcao_cargo:'Educador social - 40h semanais', rubrica:'Salário líquido', memoria_calculo:'Piso da categoria' },
-      { meta_vinculada:'Meta 1', quantidade:'2', vinculo:'CLT', salario_base:'2.200,00', categoria:'Salários E Ordenados (Exceto Diretoria)', funcao_cargo:'Auxiliar administrativo - 40h semanais', rubrica:'Total do cargo (todas as rubricas)' } ] }
-};
-const csvNorm = s => String(s == null ? '' : s).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^a-z0-9]+/g, ' ').trim();
-
-/* ---- Duplicar ---- */
-function csvMsg(type, html, state){
-  const el = $('csv-msg-' + type);
-  if(!el) return;
-  el.innerHTML = html || '';
-  el.dataset.state = state || '';
-}
-/* Valores padrão de um card novo (para saber se o card já foi preenchido). */
-const _csvDefaultsCache = {};
-function csvDefaults(type){
-  if(_csvDefaultsCache[type]) return _csvDefaultsCache[type];
-  const tmp = document.createElement('div');
-  tmp.innerHTML = CSV_SPECS[type].build('0');
-  const map = {};
-  tmp.querySelectorAll('input[id], select[id], textarea[id]').forEach(el => {
-    const suf = el.id.slice((type + '-0').length);
-    if(el.tagName === 'SELECT'){ const o = Array.from(el.options).find(x => x.defaultSelected) || el.options[0]; map[suf] = o ? o.value : ''; }
-    else map[suf] = el.defaultValue;
-  });
-  return (_csvDefaultsCache[type] = map);
-}
-function cardPreenchido(card, type){
-  const def = csvDefaults(type), pre = type + '-' + card.dataset.uid;
-  return Array.from(card.querySelectorAll('input[id], select[id], textarea[id]')).some(el => {
-    if(el.readOnly || el.type === 'hidden') return false;
-    const suf = el.id.slice(pre.length);
-    if(!(suf in def)) return false;
-    // campos em R$ são comparados pelo número (o cálculo automático grava "R$ 0,00" onde o padrão é "0,00")
-    return el.classList.contains('money-mask') ? moneyMaskToNumber(el.value) !== moneyMaskToNumber(def[suf]) : el.value !== def[suf];
-  });
-}
-function csvNovoCard(type){
-  const spec = CSV_SPECS[type], u = nextUid();
-  $(spec.container).insertAdjacentHTML('beforeend', spec.build(u));
-  return $(type + '-' + u);
-}
-function duplicarCard(type, uid){
-  const spec = CSV_SPECS[type], orig = $(type + '-' + uid);
-  if(!spec || !orig) return;
-  if(!cardPreenchido(orig, type)){
-    csvMsg(type, 'Preencha o card antes de duplicá-lo: este card ainda está vazio.', 'warn');
-    announce('Preencha o card antes de duplicá-lo.');
-    return;
-  }
-  const novo = csvNovoCard(type), nuid = novo.dataset.uid, pre = type + '-' + uid;
-  orig.querySelectorAll('.lanc-row').forEach(b => lancEnsure(type, nuid, +b.dataset.k));
-  rebuildMetaSelects();                              // o select "Meta vinculada" do card novo precisa das opções antes de receber o valor
-  orig.querySelectorAll('input[id], select[id], textarea[id]').forEach(el => {
-    if(el.readOnly || isTransientField(el)) return;  // totais e Grupo são recalculados
-    const dst = $(type + '-' + nuid + el.id.slice(pre.length));
-    if(dst) dst.value = el.value;
-  });
-  orig.after(novo);                                  // a cópia fica logo abaixo do original
-  renumberSimple(spec.container, spec.badge);
-  autoResizeAll(novo);
-  calcAll();
-  csvMsg(type, '', '');
-  announce('Card duplicado.');
-  const badge = novo.querySelector('.item-badge');
-  novo.scrollIntoView({ block:'nearest', behavior:'smooth' });
-  const first = novo.querySelector('select, input:not([type=hidden]):not([readonly]), textarea');
-  if(first) first.focus({ preventScroll:true });
-  if(badge) csvMsg(type, 'Card duplicado: ' + esc(badge.textContent) + ' (cópia logo abaixo do original).', 'ok');
-}
-
-/* ---- CSV: leitura ---- */
-function csvParse(texto){
-  const t = String(texto || '').replace(/^﻿/, '');
-  const prim = t.split(/\r?\n/)[0] || '';
-  const delim = [';', ',', '\t'].map(d => [d, prim.split(d).length]).sort((a, b) => b[1] - a[1])[0];
-  const D = delim[1] > 1 ? delim[0] : ';';
-  const rows = []; let row = [], cel = '', q = false;
-  for(let i = 0; i < t.length; i++){
-    const c = t[i];
-    if(q){ if(c === '"'){ if(t[i+1] === '"'){ cel += '"'; i++; } else q = false; } else cel += c; }
-    else if(c === '"' && cel === '') q = true;
-    else if(c === D){ row.push(cel); cel = ''; }
-    else if(c === '\n' || c === '\r'){ if(c === '\r' && t[i+1] === '\n') i++; row.push(cel); cel = ''; rows.push(row); row = []; }
-    else cel += c;
-  }
-  if(cel !== '' || row.length){ row.push(cel); rows.push(row); }
-  return rows.filter(r => r.some(x => String(x).trim() !== ''));
-}
-function csvNumero(bruto){
-  let s = String(bruto == null ? '' : bruto).replace(/R\$|\s/g, '');
-  if(s === '') return { ok:true, vazio:true, n:0 };
-  if(s.indexOf(',') > -1) s = s.replace(/\./g, '').replace(',', '.');
-  else if(/^\d{1,3}(\.\d{3})+$/.test(s)) s = s.replace(/\./g, '');
-  if(!/^\d+(\.\d+)?$/.test(s)) return { ok:false };
-  return { ok:true, n:parseFloat(s) };
-}
-function csvAchar(lista, bruto, rotulo){
-  const n = csvNorm(bruto);
-  return lista.find(x => csvNorm(rotulo ? rotulo(x) : x) === n) || null;
-}
-async function lerArquivoCSV(file, type){
-  if(file.size > 5 * 1024 * 1024){ csvMsg(type, 'Arquivo muito grande (máximo de 5 MB).', 'erro'); return; }
-  let texto;
-  try{
-    const buf = await file.arrayBuffer();
-    try{ texto = new TextDecoder('utf-8', { fatal:true }).decode(buf); }
-    catch(_){ texto = new TextDecoder('windows-1252').decode(buf); }   // CSV salvo pelo Excel em "CSV (separado por vírgulas)"
-  }catch(_){ csvMsg(type, 'Não foi possível ler o arquivo selecionado.', 'erro'); return; }
-  importarCSV(type, texto);
-}
-function importarCSV(type, texto){
-  const spec = CSV_SPECS[type];
-  const rows = csvParse(texto);
-  if(rows.length < 2){ csvMsg(type, 'O arquivo precisa ter a linha de cabeçalho e ao menos uma linha de dados. Baixe o modelo CSV para ver a estrutura.', 'erro'); return; }
-  const porNome = {}; spec.cols.forEach(c => { porNome[c.k] = c; });
-  const colunas = rows[0].map(h => porNome[csvNorm(h).replace(/ /g, '_')] || null);
-  const avisos = [];
-  rows[0].forEach((h, i) => { if(!colunas[i] && String(h).trim() !== '') avisos.push('Coluna "' + String(h).trim() + '" não reconhecida: ignorada.'); });
-  if(!colunas.some(Boolean)){ csvMsg(type, 'Nenhuma coluna do cabeçalho foi reconhecida. Baixe o modelo CSV e use os nomes das colunas exatamente como nele.', 'erro'); return; }
-  const dados = rows.slice(1);
-
-  // Fase 1: escolhe o card de cada linha — primeiro os cards vazios existentes, depois cria novos. Cards já preenchidos nunca são alterados.
-  const vazios = Array.from($(spec.container).querySelectorAll('.item-card')).filter(c => !cardPreenchido(c, type));
-  let reaproveitados = 0, novos = 0;
-  const alvo = dados.map(() => {
-    const c = vazios.shift();
-    if(c){ reaproveitados++; return c; }
-    novos++; return csvNovoCard(type);
-  });
-  rebuildMetaSelects();
-  const metas = getMetaList();
-
-  // Fase 2: grava os valores
-  dados.forEach((linha, li) => {
-    const card = alvo[li], uid = card.dataset.uid, nl = li + 2;
-    colunas.forEach((col, ci) => {
-      if(!col) return;
-      const bruto = String(linha[ci] == null ? '' : linha[ci]).trim();
-      if(bruto === '') return;
-      const el = $(type + '-' + uid + '-' + col.f);
-      if(!el) return;
-      if(col.t === 'txt'){ el.value = bruto; }
-      else if(col.t === 'num' || col.t === 'money'){
-        const r = csvNumero(bruto);
-        if(!r.ok){ avisos.push('Linha ' + nl + ': valor "' + bruto + '" inválido em "' + col.k + '" (use números, ex.: 1.234,56): campo mantido.'); return; }
-        el.value = col.t === 'money' ? numberToMoneyMask(r.n) : String(r.n);
-      }
-      else if(col.t === 'sel' || col.t === 'cat'){
-        const lista = col.t === 'cat' ? spec.categorias : col.opts, ach = csvAchar(lista, bruto);
-        if(ach) el.value = ach; else avisos.push('Linha ' + nl + ': "' + bruto + '" não consta na lista de "' + col.k + '": campo deixado em branco.');
-      }
-      else if(col.t === 'rub'){
-        const ach = RUBRICAS_RH.find(r => csvNorm(r.label) === csvNorm(bruto) || csvNorm(r.key) === csvNorm(bruto));
-        if(ach) el.value = ach.key; else avisos.push('Linha ' + nl + ': rubrica "' + bruto + '" não reconhecida: mantida a rubrica padrão.');
-      }
-      else if(col.t === 'meta'){
-        const m = csvNorm(bruto).match(/^(?:meta )?(\d+)$/), meta = m ? metas[parseInt(m[1], 10) - 1] : metas.find(x => csvNorm(x.label) === csvNorm(bruto));
-        if(meta) el.value = meta.uid; else avisos.push('Linha ' + nl + ': meta "' + bruto + '" não existe na Seção 5: meta vinculada deixada em branco.');
-      }
-    });
-  });
-  renumberSimple(spec.container, spec.badge);
-  autoResizeAll($(spec.container));
-  calcAll();
-
-  const lista = avisos.slice(0, 12).map(a => '<li>' + esc(a) + '</li>').join('') + (avisos.length > 12 ? '<li>… e mais ' + (avisos.length - 12) + ' aviso(s).</li>' : '');
-  csvMsg(type, '<b>' + dados.length + ' linha(s) importada(s):</b> ' + reaproveitados + ' em card(s) vazio(s) já existente(s) e ' + novos + ' em card(s) novo(s).' +
-    (avisos.length ? ' <b>' + avisos.length + ' aviso(s):</b><ul>' + lista + '</ul>' : ' Nenhum aviso.'), avisos.length ? 'warn' : 'ok');
-  announce(dados.length + ' linhas importadas do CSV.');
-}
-
-/* ---- CSV: modelo para download e painel de orientação ---- */
-function csvCelula(v){ v = String(v == null ? '' : v); return /[;"\r\n]/.test(v) ? '"' + v.replace(/"/g, '""') + '"' : v; }
-function baixarModeloCSV(type){
-  const spec = CSV_SPECS[type];
-  const linhas = [spec.cols.map(c => c.k)].concat(spec.exemplos.map(ex => spec.cols.map(c => ex[c.k] || '')));
-  const csv = '﻿' + linhas.map(l => l.map(csvCelula).join(';')).join('\r\n') + '\r\n';
-  saveBlobAsFile(new Blob([csv], { type:'text/csv;charset=utf-8' }), spec.arquivo, 'Modelo CSV gerado para download.');
-}
-function csvAcao(type, acao){
-  if(acao === 'template') baixarModeloCSV(type);
-  else if(acao === 'import'){ const f = $('csv-file-' + type); if(f) f.click(); }
-}
-function csvMontarPainel(type){
-  const spec = CSV_SPECS[type], mount = $('csv-mount-' + type);
-  if(!mount) return;
-  const comLista = (t, itens) => '<details class="mt-2"><summary class="text-sm">' + esc(t) + ' (' + itens.length + ')</summary><p class="csv-vals">' + itens.map(esc).join(' · ') + '</p></details>';
-  const aceitos = type === 'rh'
-    ? comLista('Vínculos aceitos', VINCULOS_SUGESTAO) + comLista('Rubricas aceitas', RUBRICAS_RH.map(r => r.label))
-    : comLista('Unidades aceitas', UNIDADES);
-  mount.innerHTML = `
-  <details class="group-panel mt-5">
-    <summary>Importar dados em CSV e duplicar cards — ${esc(spec.titulo)}</summary>
-    <div class="group-panel-body">
-      <p class="field-hint" style="max-width:78ch;">Preencha uma planilha (Excel, LibreOffice ou Google Planilhas), salve como <b>CSV</b> e importe aqui: cada linha da planilha vira um card. Para duplicar um card já preenchido, use o botão <b>Duplicar</b> no topo dele.</p>
-      <ol class="csv-steps">
-        <li>Clique em <b>Baixar modelo CSV (estrutura)</b>: o arquivo traz o cabeçalho com todas as colunas e linhas de exemplo.</li>
-        <li>Abra o modelo na planilha, apague as linhas de exemplo e lance os seus dados, <b>uma linha por card</b>. Mantenha a linha de cabeçalho; a ordem das colunas é livre e você pode omitir as colunas que não for usar.</li>
-        <li>Salve como CSV (UTF-8, separador ponto e vírgula ou vírgula) e clique em <b>Importar CSV…</b>.</li>
-      </ol>
-      <ul class="csv-steps" style="list-style:disc;">
-        <li>As linhas preenchem primeiro os <b>cards vazios</b> já existentes e, acabando eles, novos cards são criados. Cards já preenchidos <b>não são alterados</b>.</li>
-        <li>Valores em reais com vírgula decimal (ex.: <code>3.500,00</code>); quantidades como número. Categoria, unidade${type === 'rh' ? ', vínculo e rubrica' : ''} devem ter o nome exatamente como nas listas abaixo (maiúsculas e acentos não importam).</li>
-        <li>Os totais, o Grupo de despesas${type === 'rh' ? ', o salário bruto (salário base + adicionais), o salário líquido e os encargos (FGTS, 13º, férias 1/3)' : ''} são calculados pelo formulário. A importação não substitui o JSON salvo do plano.</li>
-      </ul>
-      <div class="flex gap-2 flex-wrap items-center no-print">
-        <button type="button" class="btn btn-outline btn-sm" data-csv-action="template" data-csv-type="${type}">Baixar modelo CSV (estrutura)</button>
-        <button type="button" class="btn btn-primary btn-sm" data-csv-action="import" data-csv-type="${type}">Importar CSV…</button>
-        <input type="file" id="csv-file-${type}" data-csv-file="${type}" accept=".csv,.txt,text/csv" style="display:none" aria-label="Selecionar arquivo CSV de ${esc(spec.titulo)}">
-      </div>
-      <div class="csv-msg" id="csv-msg-${type}" role="status" aria-live="polite"></div>
-      <details class="mt-3"><summary class="text-sm">Colunas do arquivo (${spec.cols.length})</summary>
-        <table class="csv-cols"><thead><tr><th>Coluna</th><th>Conteúdo</th></tr></thead><tbody>
-          ${spec.cols.map(c => `<tr><td><code>${esc(c.k)}</code></td><td>${esc(c.d)}</td></tr>`).join('')}
-        </tbody></table>
-      </details>
-      ${aceitos}
-      ${type === 'rh' ? '' : ''}${comLista('Categorias de despesas aceitas', spec.categorias)}
-    </div>
-  </details>`;
-}
-document.addEventListener('change', (e) => {
-  const t = e.target;
-  if(t && t.matches && t.matches('input[data-csv-file]')){
-    const f = t.files && t.files[0], tipo = t.dataset.csvFile;
-    t.value = '';
-    if(f) lerArquivoCSV(f, tipo);
-  }
-});
-
-document.addEventListener('change', (e) => {
-  const s = e.target && e.target.closest ? e.target.closest('select[data-lanc-acao]') : null;
-  if(s) lancAcao(s);
-});
-
 /* ===================== Global click delegation ===================== */
 document.addEventListener('click', (e) => {
-  const dupBtn = e.target.closest('[data-action="duplicate"]');
-  if(dupBtn){ duplicarCard(dupBtn.dataset.dupType, dupBtn.dataset.dupUid); return; }
-  const lancAddBtn = e.target.closest('[data-action="lanc-add"]');
-  if(lancAddBtn){ lancAdd(lancAddBtn.dataset.lancType, lancAddBtn.dataset.lancUid); return; }
-  const csvBtn = e.target.closest('[data-csv-action]');
-  if(csvBtn){ csvAcao(csvBtn.dataset.csvType, csvBtn.dataset.csvAction); return; }
   const removeBtn = e.target.closest('[data-action="remove"]');
   if(removeBtn){
     removeItem(removeBtn.dataset.removeType, removeBtn.dataset.removeTarget);
@@ -3825,7 +3901,22 @@ document.addEventListener('click', (e) => {
     const mode = fillBtn.dataset.fillMonths;
     const prefix = fillBtn.dataset.monthPrefix;
 
-    if(mode === 'repeat-first'){ fillRepeat(prefix, 12, fillBtn); return; }
+    if(mode === 'repeat-first'){
+      // Repete o valor do Mês 1 (o que estiver nele agora) para os Meses 2 a 12.
+      const first = $(prefix + '-mes-1');
+      if(!first) return;
+      const isMoney = first.classList.contains('money-mask');
+      const v = isMoney ? numMoney(prefix + '-mes-1') : first.value;
+      for(let n=2;n<=12;n++){
+        const inp = $(prefix + '-mes-' + n);
+        if(!inp) continue;
+        inp.value = isMoney ? numberToMoneyMask(v) : v;
+      }
+      calcAll();
+      vtFlash(fillBtn, 'Valor do Mês 1 repetido nos Meses 2 a 12.');
+      announce('Valor do Mês 1 repetido para os demais meses.');
+      return;
+    }
 
     if(mode === 'copy-monthly'){
       // Copia, mês a mês, os valores de outra grade (ex.: Custo Total) para esta.
@@ -3841,7 +3932,45 @@ document.addEventListener('click', (e) => {
       return;
     }
 
-    fillCost(fillBtn, mode);
+    // "copy-cost" (copia o custo lançado para os meses do período), "first" (parcela única no Mês 1)
+    // e "repeat" (legado). Nas Seções 8, 9 e 10 o botão traz data-cost-kind: total | monthly | rubrica.
+    const kind = fillBtn.dataset.costKind || '';
+    if(kind === 'rubrica') calcAll();               // garante as rubricas atualizadas antes de ler
+    const ref = fillReference(fillBtn);
+    if(kind && !(ref.value > 0)){
+      const aviso = kind === 'rubrica'
+        ? 'A rubrica selecionada está em R$ 0,00 — preencha o salário bruto/encargos antes de lançar nos meses.'
+        : 'O custo deste item ainda é R$ 0,00 — preencha quantidade e valor unitário antes de lançar nos meses.';
+      vtFlash(fillBtn, aviso);
+      announce(aviso);
+      return;
+    }
+    const values = new Array(12).fill(0);
+    let msg = '';
+    if(mode === 'copy-cost'){
+      const n = mesesAtivos();
+      if(kind === 'total'){
+        // custo único: divide em parcelas iguais; o resíduo de centavos vai para o último mês do período
+        const cents = Math.round(ref.value * 100), base = Math.floor(cents / n);
+        for(let i=0;i<n;i++) values[i] = base / 100;
+        values[n-1] = (cents - base * (n-1)) / 100;
+        msg = n === 1
+          ? 'Custo de ' + formatBRL(ref.value) + ' lançado integralmente no Mês 1.'
+          : 'Custo de ' + formatBRL(ref.value) + ' dividido em ' + n + ' parcelas iguais (Mês 1 a ' + n + ').';
+      } else {
+        for(let i=0;i<n;i++) values[i] = ref.value;
+        msg = formatBRL(ref.value) + ' lançado em ' + (n === 1 ? 'um mês (Mês 1).' : 'cada um dos ' + n + ' meses do período.');
+      }
+    } else if(mode === 'first'){
+      values[0] = ref.value;
+      msg = 'Parcela única de ' + formatBRL(ref.value) + ' lançada no Mês 1.';
+    } else {
+      values.fill(ref.value);
+    }
+    writeMonthGrid(prefix, values);
+    if(ref.rubrica) applyRubricaCategoria(ref.uid, ref.rubrica);
+    calcAll();
+    if(msg){ vtFlash(fillBtn, msg); announce(msg); }
     return;
   }
 });
@@ -3962,7 +4091,7 @@ function slugify(s){
    também a referência "Meta vinculada" (que aponta para um uid de Meta) através desse mesmo mapa. */
 function isTransientField(el){
   // <input type="file"> não aceita valor programático e a barra de rascunho/modelos não é dado do plano
-  return el.type === 'file' || el.hasAttribute('data-lanc-acao') || !!el.closest('#data-toolbar');
+  return el.type === 'file' || el.hasAttribute('data-row-action') || !!el.closest('#data-toolbar');
 }
 function setFieldValue(id, value){
   const el = $(id);
@@ -3975,6 +4104,51 @@ function setFieldValue(id, value){
   if(/-unidade$/.test(id) && value === 'serviços') value = 'serviço';
   el.value = value;
   if(el.tagName === 'TEXTAREA') autoResizeTextarea(el);
+}
+/* Seções 8 e 10 têm um card por item de despesa. Arquivos da v8.0 podiam ter várias linhas no mesmo card
+   (campos "rN-…"): cada linha preenchida vira um card próprio, logo após o original, com os mesmos meta,
+   unidade e memória. O 1º mantém quantidade e valor unitário; nos demais, quantidade 1 e valor unitário =
+   soma dos meses (implantação) ou maior valor mensal (operacional). Os lançamentos mensais não mudam. */
+function splitMultiRowItems(groups, orders){
+  let novos = 0;
+  ['impl', 'oper'].forEach(prefix => {
+    if(!groups[prefix]) return;
+    const ordem = [];
+    orders[prefix].forEach(src => {
+      const base = {}, linhas = {};
+      Object.keys(groups[prefix][src]).forEach(k => {
+        const m = /^r(\d+)-(.+)$/.exec(k);
+        if(m) (linhas[m[1]] = linhas[m[1]] || {})[m[2]] = groups[prefix][src][k];
+        else base[k] = groups[prefix][src][k];
+      });
+      const nums = Object.keys(linhas).map(Number).sort((a, b) => a - b);
+      if(!nums.length){ ordem.push(src); return; }
+      const DA_LINHA = /^(grupo|categoria|descricao|item|mes-\d+)$/;
+      const preenchida = f => ['categoria', 'descricao', 'item'].some(k => String(f[k] || '').trim()) ||
+        Object.keys(f).some(k => /^mes-/.test(k) && moneyMaskToNumber(f[k]) > 0);
+      const comum = {};
+      Object.keys(base).forEach(k => { if(!DA_LINHA.test(k)) comum[k] = base[k]; });
+      const itens = [base].concat(nums.map(n => linhas[n])).filter(preenchida);
+      if(!itens.length) itens.push(base);
+      itens.forEach((linha, i) => {
+        const campos = Object.assign({}, comum);
+        Object.keys(linha).forEach(k => { if(DA_LINHA.test(k)) campos[k] = linha[k]; });
+        if(i > 0){
+          const meses = [];
+          for(let n = 1; n <= 12; n++) meses.push(Math.round(moneyMaskToNumber(campos['mes-' + n]) * 100));
+          const cents = prefix === 'impl' ? meses.reduce((a, b) => a + b, 0) : Math.max.apply(null, meses);
+          campos[prefix === 'impl' ? 'quantidade' : 'qtdmes'] = '1';
+          campos.valorunit = numberToMoneyMask(cents / 100);
+          novos++;
+        }
+        const id = i === 0 ? src : src + '_' + i;
+        groups[prefix][id] = campos;
+        ordem.push(id);
+      });
+    });
+    orders[prefix] = ordem;
+  });
+  return novos;
 }
 function importPlanFromData(campos){
   if(!campos || typeof campos !== 'object'){
@@ -3992,19 +4166,21 @@ function importPlanFromData(campos){
   };
   const fieldRe = /^(meta|resp|sig|impl|rh|oper|recx)-(\d+)-(.+)$/;
 
-  const groups = {};
+  const groups = {}, orders = {};
   const staticFields = {};
   Object.keys(campos).forEach(id => {
     const m = id.match(fieldRe);
     if(m){
       const prefix = m[1], srcUid = m[2], field = m[3];
       groups[prefix] = groups[prefix] || {};
-      groups[prefix][srcUid] = groups[prefix][srcUid] || {};
+      if(!groups[prefix][srcUid]){ groups[prefix][srcUid] = {}; (orders[prefix] = orders[prefix] || []).push(srcUid); }
       groups[prefix][srcUid][field] = campos[id];
     } else {
       staticFields[id] = campos[id];
     }
   });
+
+  const separados = splitMultiRowItems(groups, orders);
 
   const uidMaps = {};
   REPEATER_ORDER.forEach(prefix => {
@@ -4012,7 +4188,7 @@ function importPlanFromData(campos){
     const container = $(CONTAINERS[prefix]);
     if(!container) return;
     container.innerHTML = '';
-    const srcUids = Object.keys(groups[prefix]).sort((a, b) => Number(a) - Number(b));
+    const srcUids = orders[prefix].slice();   // ordem do arquivo = ordem dos cards na tela (preserva cards duplicados)
     const map = {};
     srcUids.forEach(srcUid => {
       const before = new Set(Array.from(container.querySelectorAll('[data-uid]')).map(el => el.dataset.uid));
@@ -4025,13 +4201,15 @@ function importPlanFromData(campos){
       const newUid = map[srcUid];
       if(!newUid) return;
       const fields = groups[prefix][srcUid];
-      if(prefix === 'impl' || prefix === 'oper' || prefix === 'rh'){
-        Object.keys(fields).forEach(f => { const mk = f.match(/^r(\d+)-/); if(mk) lancEnsure(prefix, newUid, +mk[1]); });
-      }
+      if(prefix === 'rh' && fields.bruto !== undefined && fields.base === undefined) fields.base = String(fields.bruto).replace(/^R\$\s*/, '');   // arquivos antigos: o bruto digitado vira salário base
       if(prefix === 'rh'){
-        // Plano salvo antes da "composição do salário bruto": o valor do bruto antigo passa a ser o salário base
-        const temComposicao = ['sbase', 'he', 'adnot', 'outroadic', 'dsr', 'comissoes'].some(k => k in fields);
-        if(!temComposicao && 'bruto' in fields && moneyMaskToNumber(String(fields.bruto)) > 0) fields.sbase = fields.bruto;
+        const cardEl = $(prefix + '-' + newUid);
+        if(cardEl){
+          ensureRows(cardEl, fields);
+          if(!Object.keys(fields).some(k => !/^r\d+-/.test(k) && /^(categoria|item|descricao|funcaolinha|rubrica|mes-1)$/.test(k)) && Object.keys(fields).some(k => /^r\d+-/.test(k))){
+            const r1 = costRows(cardEl)[0]; if(r1 && costRows(cardEl).length > 1) r1.remove();
+          }
+        }
       }
       Object.keys(fields).forEach(field => {
         let value = fields[field];
@@ -4060,6 +4238,8 @@ function importPlanFromData(campos){
   refreshIdFields();
   autoResizeAll();
   calcAll();
+  if(!Object.keys(campos).some(k => /^rh-.*-modo$/.test(k))) inferirModosRH(campos);
+  if(separados) window.alert('Este arquivo tinha várias linhas no mesmo card (Seções 8 e/ou 10). Foram criados ' + separados + ' card(s) para deixar um item de despesa por card. Os valores mensais foram mantidos; confira quantidade e valor unitário dos itens separados.');
 }
 
 /* ===================== Logomarca da OSC/Entidade (arquivo -> Base64) ===================== */
@@ -5724,7 +5904,6 @@ function init(){
   checkDraftOnLoad();
   populateModelosSelect();
 
-  ['impl', 'rh', 'oper'].forEach(csvMontarPainel);
   addMeta(false); addMeta(false);
   addResponsavel('Presidente ou Provedor'); addResponsavel('Responsável Técnico');
   addImplantacao(); addImplantacao();
